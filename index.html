@@ -252,6 +252,27 @@
     .key-points .stat-item strong{font-size:16px;line-height:1.25;letter-spacing:-.02em;white-space:normal}
     .key-points .stat-item span{font-size:12.5px}
     @media(max-width:600px){.key-points .stat-item{padding:12px 9px}.key-points .stat-item strong{font-size:13.5px}.key-points .stat-item span{font-size:11px}}
+
+    /* FORMA — 3 points clés pleine largeur */
+    .keys{position:relative;padding:0 0 90px;background:linear-gradient(var(--deep) 0 150px,var(--cream) 150px)}
+    .keys-head{text-align:center;padding:10px 0 34px}
+    .keys-head .kicker{color:#7aafff}
+    .keys-head h2{color:#fff;font-size:clamp(32px,3.8vw,50px);letter-spacing:-.055em;line-height:1.1;margin:0}
+    .keys-head h2 em{font-family:'Times New Roman',Times,Georgia,serif;font-weight:500;font-style:italic;color:#81b1ff;letter-spacing:-.04em}
+    .keys-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .key-card{position:relative;overflow:hidden;background:#fff;border:1px solid #e1e9f4;border-radius:20px;padding:34px 30px 32px;box-shadow:0 24px 60px rgba(13,35,65,.13);transition:transform .2s,box-shadow .2s}
+    .key-card:before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,#2563eb,#81b1ff)}
+    .key-card:hover{transform:translateY(-4px);box-shadow:0 30px 70px rgba(13,35,65,.18)}
+    .key-num{position:absolute;top:14px;right:22px;font-size:76px;font-weight:900;letter-spacing:-.06em;line-height:1;color:transparent;-webkit-text-stroke:1.5px #c9daf5}
+    .key-icon{width:58px;height:58px;border-radius:16px;background:#e3eeff;color:#2563eb;display:grid;place-items:center;margin-bottom:24px}
+    .key-card h3{font-size:25px;line-height:1.15;letter-spacing:-.045em;margin:0 0 12px;color:#11274a}
+    .key-card p{margin:0;font-size:15.5px;line-height:1.6;color:#566c88}
+    .keys-cta{display:flex;flex-direction:column;align-items:center;gap:14px;margin-top:38px;text-align:center}
+    .keys-cta p{margin:0;font-size:14px;font-weight:750;color:#173c76}
+    @media(max-width:800px){.keys-grid{grid-template-columns:1fr;gap:16px}.keys{background:linear-gradient(var(--deep) 0 130px,var(--cream) 130px)}}
+    @media(max-width:600px){.keys{padding-bottom:64px}.keys-head{padding:0 0 26px}.key-card{padding:26px 22px 24px}.key-num{font-size:60px}.key-card h3{font-size:22px}.key-icon{width:50px;height:50px;margin-bottom:18px}.keys-cta .btn-main{width:100%}}
+    .keys{margin-top:-2px;z-index:1}
+    .hero:before,.hero:after{-webkit-mask-image:linear-gradient(#000 55%,transparent 98%);mask-image:linear-gradient(#000 55%,transparent 98%)}
   </style>
 </head>
 <body data-forma-variant="marine">
@@ -272,11 +293,6 @@
           <div class="hero-hosts">
             <div class="slot"><img src="images/duo.jpg" alt="Aymeric et Marius" onerror="this.parentNode.classList.add('empty');this.remove()"><span class="slot-label" aria-hidden="true">A&amp;M</span></div>
             <p><b>Aymeric &amp; Marius</b>En direct dimanche 29 novembre à 20&nbsp;h</p>
-          </div>
-          <div class="proof-stats key-points" role="list" aria-label="Les trois points clés du live">
-            <div class="stat-item" role="listitem"><strong>Attirer tes premiers clients</strong><span>Sans audience ni réseau préalable</span></div>
-            <div class="stat-item" role="listitem"><strong>Vendre au bon prix</strong><span>Devis, marges et techniques de vente</span></div>
-            <div class="stat-item" role="listitem"><strong>Te lancer de zéro</strong><span>Matériel, méthode et organisation</span></div>
           </div>
           <div class="hero-actions"><a href="#inscription" class="btn-main">Je réserve ma place gratuite <span aria-hidden="true">↗</span></a></div>
         </div>
@@ -311,11 +327,19 @@
       </div>
     </section>
 
-      <div class="promise"><span class="promise-mark" aria-hidden="true">✓</span><div><strong>Vendre au bon prix</strong><small>Devis, marges et techniques de vente</small></div></div>
-      <div class="promise"><span class="promise-mark" aria-hidden="true">✓</span><div><strong>Te lancer de zéro</strong><small>Matériel, méthode et organisation</small></div></div>
-    </div></div>
+    <section class="keys" id="programme" aria-labelledby="keys-title">
+      <div class="container">
+        <div class="keys-head"><p class="kicker">01 / Pendant ce live</p><h2 id="keys-title">Le 29 novembre, <em>tu vas découvrir :</em></h2></div>
+        <div class="keys-grid">
+          <article class="key-card"><span class="key-num">01</span><div class="key-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg></div><h3>Attirer tes premiers clients</h3><p>Le système qui t'apporte des demandes de devis chaque semaine, même si personne ne te connaît.</p></article>
+          <article class="key-card"><span class="key-num">02</span><div class="key-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8Z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></div><h3>Vendre au bon prix</h3><p>Ce que vaut vraiment un chantier de toiture ou de façade, et comment signer sans casser tes marges.</p></article>
+          <article class="key-card"><span class="key-num">03</span><div class="key-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.3-2 5-2 5s3.7-.5 5-2c.7-.8.7-2.1-.1-2.9a2.2 2.2 0 0 0-2.9-.1Z"/><path d="m12 15-3-3a22 22 0 0 1 2-4A12.9 12.9 0 0 1 22 2c0 2.7-.8 7.5-6 11a22 22 0 0 1-4 2Z"/><path d="M9 12H4s.6-3 2-4c1.6-1.1 5 0 5 0M12 15v5s3-.6 4-2c1.1-1.6 0-5 0-5"/></svg></div><h3>Te lancer de zéro</h3><p>Matériel, sécurité, organisation : les étapes dans l'ordre pour tes 90 premiers jours.</p></article>
+        </div>
+        <div class="keys-cta"><a href="#inscription" class="btn-main">Je réserve ma place gratuite <span aria-hidden="true">↗</span></a><p>🎁 Une surprise réservée à ceux qui seront là en direct.</p></div>
+      </div>
+    </section>
 
-    <section class="content proofs" id="preuves" aria-labelledby="preuves-title">
+<section class="content proofs" id="preuves" aria-labelledby="preuves-title">
       <div class="container">
         <div class="section-head"><p class="kicker">Nos chiffres, sans filtre</p><h2 id="preuves-title">Nos résultats, captures à l'appui.</h2><p>Captures de nos comptes professionnels. Noms des clients et des sociétés masqués.</p></div>
         <div class="shots">
@@ -326,17 +350,6 @@
       </div>
     </section>
 
-    <section class="content" id="programme">
-      <div class="container">
-        <div class="section-head"><p class="kicker">01 / Pendant ce live</p><h2>Ce que tu vas découvrir.</h2></div>
-        <div class="value-grid">
-          <article class="value-card"><div class="num">01</div><h3>Le marché que presque personne ne voit</h3><p>Pourquoi toitures et façades paient mieux que le reste du nettoyage, et ce que vaut vraiment un chantier.</p></article>
-          <article class="value-card"><div class="num">02</div><h3>Tes premiers clients, vite</h3><p>Comment signer tes premiers chantiers en quelques semaines, même si personne ne te connaît.</p></article>
-          <article class="value-card"><div class="num">03</div><h3>Le plan des 90 premiers jours</h3><p>Matériel, prix, organisation : l'ordre exact des étapes vers 10&nbsp;000&nbsp;€ de CA par mois, et les erreurs qui font échouer les débutants.</p></article>
-        </div>
-        <div class="course-cta"><a href="#inscription" class="btn-main">Je réserve ma place gratuite <span aria-hidden="true">↗</span></a><span class="note">Dimanche 29 novembre · 20&nbsp;h · En ligne</span></div>
-      </div>
-    </section>
 
     <section class="content" id="pour-qui" style="padding-top:0">
       <div class="container">
