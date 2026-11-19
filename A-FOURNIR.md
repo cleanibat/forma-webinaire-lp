@@ -5,10 +5,10 @@ Tant qu'un fichier manque, la page affiche un emplacement en pointillés.
 
 | Fichier | Où il apparaît | Conseil |
 |---|---|---|
-| `images/duo.jpg` | Rond à côté du titre (haut de page) | Photo de vous deux, visages bien visibles, cadrage carré |
+| `images/aymeric.jpg` et `images/marius.jpg` | Deux ronds côte à côte sous l'accroche (haut de page) | Une photo de chacun, visage bien visible, cadrage carré |
 | `images/duo-animateurs.jpg` | Grand visuel du bloc « Tes animateurs » | Vous deux, idéalement sur chantier, format vertical ou carré |
 | `images/qonto-1.jpg` à `qonto-3.jpg` | Section « Nos vrais résultats », juste sous le haut | Captures Qonto, **noms de clients, IBAN et soldes perso masqués**, format vertical |
-| `images/chantier-1.jpg` à `chantier-3.jpg` | Galerie sous le bloc animateurs | Vous en action, sans adresse ni plaque visible |
+| `images/chantier-1.jpg` à `chantier-3.jpg` | Galerie avant / après sous le bloc animateurs | 1 : avant / après toiture · 2 : avant / après façade · 3 : avant / après toiture 2 (photos montées côte à côte), sans adresse ni plaque visible |
 | `videos/confirmation.mp4` | Écran après inscription | Vidéo verticale 60 à 90 s (voir `script-video-confirmation.md`) |
 
 ## À me donner en texte
