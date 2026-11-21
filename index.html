@@ -7,8 +7,8 @@
   <meta name="color-scheme" content="light">
   <meta name="theme-color" content="#08172c">
   <meta name="description" content="Live gratuit avec Aymeric &amp; Marius, dimanche 29 novembre 2026 à 20 h : comment lancer ton entreprise de nettoyage de toitures et façades, trouver tes clients et vendre au bon prix.">
-  <title>Live gratuit : 10 000 € par mois grâce au nettoyage de toitures et façades | FORMA</title>
-  <meta property="og:title" content="Comment atteindre 10 000 € par mois en moins de 3 mois grâce au nettoyage extérieur ?">
+  <title>Comment atteindre 10 000 € par mois en moins de 3 mois grâce au nettoyage extérieur ? | Live gratuit FORMA</title>
+  <meta property="og:title" content="Live gratuit : comment atteindre 10 000 € par mois en moins de 3 mois grâce au nettoyage de toitures et façades ?">
   <meta property="og:description" content="Live gratuit avec Aymeric &amp; Marius, dimanche 29 novembre à 20 h : trouver tes clients et vendre au bon prix dans le nettoyage de toitures et façades.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -371,10 +371,148 @@
     .gallery-kicker{margin:64px 0 0}
     .gallery{margin-top:18px}
     @media(max-width:600px){.key-card h3{font-size:20px;padding-right:48px;text-wrap:balance}.signup-header .event-icon{display:none}.signup-header{margin-bottom:16px}.signup h2{font-size:23px}.date-panel{margin-bottom:18px}.date-panel>div{font-size:15px}.dp-year{display:none}.keys-head h2{font-size:27px;line-height:1.14}.keys-head{padding-bottom:88px}.gallery-kicker{margin-top:48px}.gallery{margin-top:14px}}
+
+    /* FORMA — éditeur tour 11 : sur-titres, vrais visuels, formulaire au 1er écran */
+    .section-head .kicker,.founder .kicker{font-size:12px;line-height:1.4;letter-spacing:.16em;color:#356fbf;margin:0 0 16px}
+    #chantiers{padding-top:16px}
+    #chantiers .gallery{margin-top:0}
+    .proofs .shot{background:#f3f6fb;border:1px solid #dfe8f4}
+    .proofs .shot img{object-fit:contain;object-position:center}
+    .founder-art .caption-card{width:auto;max-width:82%;padding:14px 18px}
+    .founder-art .caption-card h3{font-size:19px;line-height:1.25;margin-top:6px}
+    .founder-art:not(.empty):after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 55%,rgba(7,23,45,.7));pointer-events:none}
+    @media(min-width:801px){.signup{padding:26px 30px}.date-panel{margin-bottom:14px;padding:12px 14px}.form-row{margin-bottom:11px}input[type=text],input[type=email],input[type=tel]{padding:11px 14px}.field-help{margin-top:5px}.form-submit{min-height:52px}}
+    @media(max-width:600px){#chantiers{padding-top:8px}.proofs .shot{aspect-ratio:4/3}.founder-art{min-height:0;aspect-ratio:4/5;padding:16px}.hero-hosts{flex-direction:row;align-items:flex-start;gap:12px}.hero-hosts .duo .slot{width:44px;height:44px}.hero-hosts .duo .slot+.slot{margin-left:-12px}.hero-hosts b{font-size:15px}.hero-hosts p{font-size:14px}}
+
+    /* FORMA — éditeur tour 12 : preuves lisibles, visages reconnaissables, avant/après légendés, formulaire plus court */
+    .proofs .shot{aspect-ratio:4/5;background:#fff;padding:10px}
+    .proofs .shot a{position:absolute;inset:0;cursor:zoom-in}
+    .proofs .shot img{inset:10px;width:calc(100% - 20px);height:calc(100% - 20px);object-fit:contain}
+    .proofs-cta{margin-top:34px}
+    @media(min-width:601px){.hero-hosts .duo .slot{width:84px;height:84px}.hero-hosts .duo .slot+.slot{margin-left:-18px}}
+    @media(max-width:600px){.proofs .shot{aspect-ratio:4/5}.hero-hosts .duo .slot{width:58px;height:58px}.hero-hosts .duo .slot+.slot{margin-left:-14px}}
+    @media(min-width:801px){.founder-art{min-height:0;aspect-ratio:4/5}}
+    .gallery .ba-tag{position:absolute;left:12px;bottom:12px;z-index:1;background:rgba(8,23,44,.85);color:#fff;font-size:12px;font-weight:800;letter-spacing:.02em;padding:6px 10px;border-radius:8px}
+    .gallery .slot.empty .ba-tag{display:none}
+    @media(min-width:801px){.gallery{grid-template-columns:1.6fr 1fr;grid-template-rows:1fr 1fr}.gallery .slot:first-child{grid-row:span 2;aspect-ratio:auto}}
+    @media(min-width:601px){.signup .mini-kicker{display:none}.signup h2{margin:0}}
+    .why-now{color:#3d1f1f;background:#fff4f4;border-left-color:#e63946}.why-now b{color:#d62828}
+    .hero-when,.keys-cta p,.course-cta .note{text-wrap:balance}
+
+    /* FORMA — éditeur passage 13 : visages dans le formulaire, formulaire compact, captures lisibles, avant/après étiquetés */
+    .form-duo{display:flex;flex:0 0 auto}
+    .form-duo .slot{width:48px;height:48px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 2px #2563eb}
+    .form-duo .slot+.slot{margin-left:-12px}
+    .form-duo .slot .slot-label{font-size:13px;color:#dce9ff;padding:0;border:0}
+    .signup .mini-kicker{display:block;margin-bottom:2px}
+    .pair-help{margin:-6px 0 14px}
+    @media(min-width:601px){.form-pair{display:grid;grid-template-columns:1fr 1fr;gap:12px}.form-pair .form-row{margin-bottom:6px}.pair-help{margin:0 0 12px}}
+    @media(max-width:600px){.signup-header{gap:12px}.form-duo .slot{width:42px;height:42px}.form-duo .slot+.slot{margin-left:-10px}}
+    .proofs .shot{border-color:#cfdcee;box-shadow:0 18px 44px rgba(13,35,65,.13)}
+    .proofs .shot img{object-fit:cover;object-position:top center}
+    .proofs .shot a:after{content:"Agrandir";position:absolute;right:12px;bottom:12px;background:rgba(8,23,44,.85);color:#fff;font-size:12px;font-weight:800;padding:6px 10px;border-radius:8px}
+    .gallery .slot.ok:before,.gallery .slot.ok:after{position:absolute;top:12px;z-index:1;padding:5px 9px;border-radius:7px;font-size:11px;font-weight:900;letter-spacing:.08em;color:#fff}
+    .gallery .slot.ok:before{content:"AVANT";left:12px;background:rgba(8,23,44,.82)}
+    .gallery .slot.ok:after{content:"APRÈS";right:12px;background:#2563eb}
+    @media(max-width:600px){.gallery{display:grid;grid-template-columns:1fr;overflow:visible;gap:14px}.gallery>.slot{aspect-ratio:4/3}.proofs figure{display:flex;flex-direction:column-reverse}.proofs .shot-cap{margin:0 2px 10px}}
+    @media(min-width:601px) and (max-width:800px){.gallery .slot:first-child{grid-column:1/-1}.proofs .shots{grid-template-columns:repeat(3,1fr);gap:12px}.proofs .shot-cap{font-size:14px}}
+    .founder-art .caption-card h3{margin-top:0;font-size:17px}
+    /* étiquettes et badge « Agrandir » seulement quand l'image est réellement chargée */
+    .gallery .slot:not(.ok) .ba-tag{display:none}
+    .proofs .shot:not(.ok) a:after{content:none}
+    /* FORMA — éditeur passage 14 : haut de page plus sec, urgence près du bouton, pastille mobile sur 2 lignes, fin de page mobile */
+    .why-now{margin:2px 0 14px;font-size:12.5px;padding:8px 11px}
+    @media(max-width:600px){.hero{padding-top:26px}.hero h1{margin:16px 0 14px}.form-duo{display:none}.signup .mini-kicker{margin-bottom:4px}body{padding-bottom:0}.tools{padding-bottom:calc(17px + 72px + env(safe-area-inset-bottom))}.hero .eyebrow{font-size:9.5px;letter-spacing:.05em;padding:8px 12px 8px 11px}.hero .eyebrow .eb-2{text-wrap:balance}}
+    @media(min-width:801px){.proofs .shots{gap:26px}.proofs .shot{aspect-ratio:3/4}.proofs .shot.ok{outline:3px solid #2563eb;outline-offset:-3px}}
+    /* FORMA — benchmark 30 infopreneurs, passage 1 : profil, ce qu'on emporte, chantier en suspens, écran merci en étapes, popup de sortie, fin du live */
+    .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+    .profil{border:0;padding:0;margin:0 0 12px;min-width:0}
+    .profil legend{font-weight:780;font-size:12px;margin-bottom:7px;padding:0}
+    .profil legend small{font-weight:600;color:#7a8ba2}
+    .profil-opts{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+    .profil-opts label{display:flex;align-items:center;gap:8px;margin:0;padding:9px 11px;border:1.5px solid #d7e3f3;border-radius:10px;font-size:12.5px;font-weight:700;line-height:1.3;color:#243d61;cursor:pointer;background:#fff}
+    .profil-opts input{margin:0;flex:0 0 auto;accent-color:#2563eb;width:16px;height:16px}
+    .profil-opts label:has(input:checked){border-color:#2563eb;background:#f1f6fd}
+    .key-card .key-take{margin-top:14px;padding-top:13px;border-top:1px dashed #d3dff0;font-size:14.5px;line-height:1.5;color:#1d3a63}
+    .key-card .key-take b{color:#2563eb}
+    .site-case{margin:22px auto 0;max-width:900px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 22px;background:#fff;border:1px solid #dee7f2;border-radius:14px;padding:16px 20px;box-shadow:0 14px 36px rgba(13,35,65,.08);font-size:14px;color:#566c88}
+    .site-case .sc-title{font-weight:850;color:#11274a;font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+    .site-case span b{color:#11274a}
+    .site-case .fill{display:inline-block;border-bottom:1.5px dashed #8db5ef;color:#3a6fb8;font-weight:750;padding:0 2px}
+    .site-case .sc-title{flex-basis:100%}
+    .site-case .sc-rest{flex-basis:100%;margin-top:4px;padding-top:10px;border-top:1px dashed #d3dff0;font-weight:850;color:#2563eb}
+    @media(max-width:600px){.site-case{flex-direction:column;align-items:flex-start;gap:6px;padding:15px 16px}.site-case .sc-rest{align-self:stretch}}
+    .sx-progress{margin:-2px 0 16px;text-align:left}
+    .sx-bar{height:8px;border-radius:99px;background:#e3ecf8;overflow:hidden}
+    .sx-bar span{display:block;height:100%;width:90%;background:linear-gradient(90deg,#2563eb,#15803d);border-radius:inherit}
+    .sx-progress p{margin:7px 0 0;font-size:12px;line-height:1.4;color:#566d86}
+    .sx-progress b{color:#15803d}
+    .success .sx-stay{background:#fff5ee;border-left:3px solid #e0402a;border-radius:8px;padding:9px 12px;text-align:left;font-size:13px;line-height:1.5;color:#4a2412;margin:0 0 14px}
+    .success .sx-stay strong{color:#c42f1c}
+    .sx-steps{list-style:none;margin:0;padding:0;text-align:left;display:grid;gap:12px;counter-reset:sx}
+    .sx-steps li{display:grid;grid-template-columns:26px 1fr;gap:10px;align-items:start;font-size:13.5px;line-height:1.5;color:#566d86}
+    .sx-steps li:before{counter-increment:sx;content:counter(sx);width:26px;height:26px;border-radius:50%;background:#2563eb;color:#fff;font-weight:900;font-size:13px;display:grid;place-items:center}
+    .sx-steps b{color:#11274a}
+    .sx-steps .btn-wa,.sx-steps .btn-ghost{width:100%;margin-top:8px}
+    .sx-cal{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+    .sx-cal .btn-ghost{min-height:44px;padding:10px 12px;font-size:13px;text-align:center;white-space:nowrap}
+    @media(max-width:600px){.sx-steps li{gap:8px}.sx-steps .btn-wa{font-size:13.5px;padding:12px 10px;white-space:nowrap;min-height:48px}.sx-cal .btn-ghost{padding:8px 6px;font-size:12.5px}}
+    .success .sx-when{margin:16px 0 0}
+    .sx-share{margin-top:14px;padding-top:14px;border-top:1px solid #e3ecf8}
+    .success .sx-share p{margin:0 0 8px;font-size:13px;line-height:1.5}
+    .sx-share .btn-ghost{width:100%;min-height:44px;font-size:13px}
+    .live-over{text-align:center;padding:14px 0 6px}
+    .live-over h2{font-size:24px;margin:0 0 10px;color:#11274a}
+    .live-over p{margin:0;font-size:14.5px;line-height:1.6;color:#566d86}
+    .exit-pop{border:0;padding:0;border-radius:18px;max-width:460px;width:calc(100% - 32px);box-shadow:0 30px 90px rgba(0,0,0,.35)}
+    .exit-pop::backdrop{background:rgba(8,23,44,.72)}
+    .exit-pop .ep-in{padding:30px 30px 24px;text-align:center;border-top:7px solid #2563eb}
+    .exit-pop h2{margin:0 0 10px;font-size:26px;color:#11274a;letter-spacing:-.03em}
+    .exit-pop p{margin:0 0 20px;font-size:15px;line-height:1.6;color:#4a5f7b}
+    .exit-pop .btn-main{width:100%;min-height:52px;font-size:15px}
+    .exit-pop .ep-close{margin-top:12px;border:0;background:none;color:#5f6f84;font-weight:700;font-size:13px;text-decoration:underline;cursor:pointer}
+    /* FORMA — test à l'aveugle, passage 2 : visages au 1er écran, vidéo animateurs, captures agrandies, écran merci engageant */
+    .hero-hosts{align-items:center;gap:18px}
+    .hero-hosts .hero-photo{flex:0 0 auto;width:250px;height:auto;aspect-ratio:16/9;border-radius:14px;border:2px solid rgba(75,146,255,.55);box-shadow:0 14px 36px rgba(0,0,0,.28)}
+    .hero-hosts .hero-photo .slot-label{font-size:12px;color:#cfe0fa}
+    @media(max-width:600px){.hero-hosts{flex-direction:column;align-items:stretch;gap:12px}.hero-hosts .hero-photo{width:100%}.hero-hosts p{max-width:none}}
+    .founder-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:2;display:none;background:#0b1f3a}
+    .founder-art.has-video .founder-video{display:block}
+    .founder-art.has-video .caption-card{display:none}
+    .founder-art.empty:after{content:"Vidéo 30–45 s face caméra, Aymeric & Marius sur chantier (couverture : photo du duo) · à fournir"}
+    .proofs .shot a{cursor:zoom-in}
+    .zoom-pop{border:0;padding:0;background:transparent;max-width:min(96vw,900px);max-height:94vh;overflow:visible}
+    .zoom-pop::backdrop{background:rgba(8,23,44,.9)}
+    .zoom-pop img{display:block;max-width:100%;max-height:86vh;border-radius:10px;background:#fff}
+    .zoom-pop .zp-close{display:block;margin:12px auto 0;border:0;border-radius:8px;background:#fff;color:#11274a;font-weight:800;font-size:14px;padding:10px 16px;cursor:pointer}
+    .profil-opts{grid-template-columns:repeat(3,1fr);gap:6px}
+    .profil-opts label{padding:8px 9px;font-size:12px;align-items:center}
+    @media(max-width:600px){.profil-opts{display:flex;flex-wrap:wrap;gap:7px}.profil-opts label{flex:1 1 auto;padding:9px 10px;font-size:13px;white-space:nowrap}}
+    .sx-quiz b{color:#11274a}
+    .success .sx-street{margin:10px 0 0;font-weight:750;color:#173c76}
+    @media(min-width:801px){.hero .hero-actions{display:flex}.hero .hero-actions .btn-main{display:none}.hero .hero-when{margin:0 0 18px}}
+    .sx-qbox{margin:16px 0 0;padding:14px 15px;border:1px solid #e3ecf8;border-radius:12px;text-align:left;font-size:13.5px;line-height:1.5;color:#566d86}
+    .exit-pop .ep-when{margin-top:-8px;font-size:14px;color:#11274a}
+    .signup .why-now{margin:0 0 14px}
+    .date-panel .dp-count{color:#c42f1c;font-weight:800;margin-top:6px}
+    .success .sx-vtitle{margin:18px 0 8px;font-size:13px;font-weight:800;color:#11274a;text-align:left}
+    .hero-when b{color:#fff}
+    .sxq-hint{font-size:12px;color:#5f6f84}
+    .sx-chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:8px}
+    .sx-chips button{border:1.5px solid #c9d8ee;background:#fff;color:#1d3a63;border-radius:99px;padding:8px 12px;font-size:13px;font-weight:750;line-height:1.25}
+    .sx-chips button:hover,.sx-chips button[aria-pressed=true]{border-color:#2563eb;background:#eaf2ff}
+    .sx-noted{margin:0;color:#15803d}.sx-noted b{color:#15803d}
+    .sx-take{margin:16px 0 0;padding:14px 15px;background:#f1f6fd;border:1px solid #d7e6fc;border-radius:12px;text-align:left}
+    .success .sx-take p{margin:0;font-size:13.5px;line-height:1.5;color:#11274a}
+    .sx-take ul{margin:7px 0 10px;padding-left:18px;font-size:13.5px;line-height:1.55;color:#4a5f7a}
+    .success .sx-take .sx-surprise{color:#173c76;font-weight:750}
+    .success h3{font-size:23px;line-height:1.25;text-wrap:balance}
+    @media(max-width:600px){.success h3{font-size:20px}}
+    @media(max-width:600px){.hero .eyebrow{font-size:12px;letter-spacing:.04em;line-height:1.35;padding:7px 12px 7px 11px}.hero{padding-top:16px}.hero h1{margin:13px 0 12px}.hero-copy.hero-copy-1{margin-bottom:12px}.hero-focus{margin-bottom:20px}.hero .hero-actions{margin:0 0 24px;gap:8px}}
   </style>
 </head>
 <body data-forma-variant="marine">
-  <div class="bar"><span class="bar-extra">Live en ligne · Dimanche 29 novembre · 20&nbsp;h (heure de Paris) <span>✦</span> </span><span class="countdown" id="countdown">Heure de Paris</span></div>
+  <div class="bar"><span class="bar-extra">Dernier live de l'année · Dimanche 29 novembre 2026 · 20&nbsp;h (heure de Paris) <span>✦</span> </span><span class="countdown" id="countdown">Dimanche 20 h</span></div>
   <header>
     <div class="container nav">
       <a href="#top" class="brand" aria-label="FORMA, retour en haut de la page"><span class="brand-mark" aria-hidden="true"><svg width="23" height="23" viewBox="0 0 24 24" fill="none"><path d="m2 12 10-8 10 8M5 11v9h14v-9M9 20v-7h6v7" stroke="#112844" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>FORMA<span style="color:#4b92ff">.</span></span></a>
@@ -385,42 +523,53 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="container hero-grid">
         <div>
-          <div class="eyebrow"><span class="pulse"></span><span>Live gratuit avec Aymeric &amp; Marius<span class="eb-sep"> · </span><span class="eb-2">Nettoyage de toitures et façades</span></span></div>
+          <div class="eyebrow"><span class="pulse"></span><span>Live gratuit ce dimanche<span class="eb-sep"> </span><span class="eb-2">sur le business du nettoyage de toitures et façades</span></span></div>
           <h1 id="hero-title">Comment atteindre <em>10&nbsp;000&nbsp;€ par mois</em> en moins de 3 mois grâce au nettoyage extérieur&nbsp;?</h1>
-          <p class="hero-copy hero-copy-1">Les toits se couvrent de mousse, les façades noircissent&nbsp;: les propriétaires paient un pro pour les remettre à neuf, et chaque chantier se facture comme dans le bâtiment. Sans expérience, ou en plus de ton activité d'artisan.</p>
-          <p class="hero-copy hero-focus">La technique s'apprend vite. Ce qui fait la différence, c'est de <strong>trouver des clients</strong> et de <strong>vendre au bon prix</strong>. En live, on te montre les 3&nbsp;clés qu'on a suivies tous les deux, dans l'ordre.</p>
-          <div class="hero-actions"><a href="#inscription" class="btn-main">Je réserve ma place gratuite <span aria-hidden="true">→</span></a><p class="hero-when">Dimanche 29&nbsp;novembre · 20&nbsp;h · En&nbsp;ligne · 100&nbsp;%&nbsp;gratuit</p></div>
+          <p class="hero-copy hero-copy-1">Démousser des toitures, redonner leur couleur aux façades&nbsp;: partout, des propriétaires paient un pro pour ça. Ce pro, ça peut être toi, même sans expérience ou en plus de ton activité d'artisan.</p>
+          <p class="hero-copy hero-focus">Le métier s'apprend vite. Ce qui fait ton chiffre, c'est de <strong>trouver des clients</strong> et de <strong>vendre au bon prix</strong>. En live, on te montre comment on s'y est pris pour dépasser, chacun, 10&nbsp;000&nbsp;€ par mois dès le 2ᵉ&nbsp;mois.</p>
+          <div class="hero-actions"><a href="#inscription" class="btn-main">Je réserve ma place gratuite <span aria-hidden="true">→</span></a><p class="hero-when">Dernier live de l'année · <b>Dimanche 29&nbsp;novembre</b> · 20&nbsp;h&nbsp;·&nbsp;100&nbsp;%&nbsp;gratuit</p></div>
           <div class="hero-hosts">
-            <div class="duo"><div class="slot"><img src="images/aymeric.jpg" alt="Aymeric" onerror="this.parentNode.classList.add('empty');this.remove()"><span class="slot-label" aria-hidden="true">A</span></div><div class="slot"><img src="images/marius.jpg" alt="Marius" onerror="this.parentNode.classList.add('empty');this.remove()"><span class="slot-label" aria-hidden="true">M</span></div></div>
-            <p><b>Avec Aymeric &amp; Marius, qui ont chacun lancé leur entreprise de nettoyage de toitures et façades</b>Chacun a dépassé <strong>10&nbsp;000&nbsp;€ de chiffre d'affaires par mois dès son 2ᵉ&nbsp;mois</strong>. À deux, plus d'<strong>un million d'euros de chiffre d'affaires</strong>.</p>
+            <div class="slot hero-photo"><img src="images/duo-hero.jpg" alt="Aymeric et Marius sur un de leurs chantiers" onerror="this.parentNode.classList.add('empty');this.remove()"><span class="slot-label" aria-hidden="true">Photo Aymeric &amp; Marius<br>sur chantier (à fournir)</span></div>
+            <p><b>Avec Aymeric &amp; Marius, deux entrepreneurs du nettoyage de toitures et façades.</b> À deux, plus d'<strong>un million d'euros de chiffre d'affaires</strong>.</p>
           </div>
         </div>
         <aside class="signup-wrap" id="inscription" aria-label="Inscription au live">
           <div class="signup">
             <div id="form-section">
-              <div class="signup-header"><div class="event-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M7 2v6m10-6v6M3 10h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div><div><div class="mini-kicker">Inscription</div><h2>Réserve ta place gratuite au live du 29&nbsp;novembre.</h2></div></div>
-              <div class="date-panel"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" style="flex:0 0 auto"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div>Dimanche 29 novembre<span class="dp-year"> 2026</span>&nbsp;·&nbsp;20&nbsp;h <small>En direct, en ligne depuis chez toi · 1&nbsp;h&nbsp;30 à 2&nbsp;h · heure de Paris</small><small class="date-gift"><span aria-hidden="true">🎁</span><span>Une surprise réservée à ceux qui seront là en direct.</span></small></div></div>
-              <p class="why-now"><b>Pourquoi maintenant&nbsp;?</b> Les demandes de nettoyage repartent au printemps, dans 3&nbsp;mois. Démarre cet hiver et tu seras prêt quand la saison arrive.</p>
+              <div class="signup-header"><div class="form-duo" aria-hidden="true"><div class="slot"><img src="images/aymeric.jpg" alt="" onerror="this.parentNode.classList.add('empty');this.remove()"><span class="slot-label">A</span></div><div class="slot"><img src="images/marius.jpg" alt="" onerror="this.parentNode.classList.add('empty');this.remove()"><span class="slot-label">M</span></div></div><div><div class="mini-kicker">Avec Aymeric &amp; Marius</div><h2>Réserve ta place gratuite.</h2></div></div>
+              <div class="date-panel"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" style="flex:0 0 auto"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div>Dimanche 29 novembre<span class="dp-year"> 2026</span>&nbsp;·&nbsp;20&nbsp;h <small>En direct, en ligne · 1&nbsp;h&nbsp;30 à 2&nbsp;h</small><small class="dp-count" id="countdown2" aria-live="off"></small><small class="date-gift"><span aria-hidden="true">★</span><span>Une surprise réservée à ceux qui seront là en direct.</span></small></div></div>
               <form id="signup-form" novalidate>
-                <div class="form-row"><label for="firstName">Ton prénom</label><input id="firstName" name="firstName" type="text" placeholder="Ex. Thomas" autocomplete="given-name" maxlength="80" required></div>
-                <div class="form-row"><label for="email">Ton adresse e-mail</label><input id="email" name="email" type="email" placeholder="tonadresse@email.com" autocomplete="email" maxlength="180" required></div>
-                <div class="form-row"><label for="phone">Ton téléphone</label><input id="phone" name="phone" type="tel" placeholder="06 12 34 56 78" autocomplete="tel" inputmode="tel" maxlength="20" required><p class="field-help">Pour recevoir le lien du live et un rappel 15&nbsp;min avant (SMS ou WhatsApp).</p></div>
+                <p class="why-now"><b>Pourquoi maintenant&nbsp;?</b> C'est notre dernier live de l'année&nbsp;: après le 29&nbsp;novembre, on ne dévoilera plus notre méthode avant l'année prochaine. Dimanche soir, tu sauras si ce métier est fait pour toi, et par quoi commencer dès lundi.</p>
+                <div class="hp" aria-hidden="true"><label>Site web<input type="text" name="website" id="website" tabindex="-1" autocomplete="off"></label></div>
+                <div class="form-pair">
+                  <div class="form-row"><label for="firstName">Ton prénom</label><input id="firstName" name="firstName" type="text" placeholder="Ex. Thomas" autocomplete="given-name" maxlength="80" required></div>
+                  <div class="form-row"><label for="email">Ton e-mail</label><input id="email" name="email" type="email" placeholder="ton@email.com" autocomplete="email" maxlength="180" required></div>
+                </div>
+                <div class="form-row"><label for="phone">Ton téléphone</label><input id="phone" name="phone" type="tel" placeholder="06 12 34 56 78" autocomplete="tel" inputmode="tel" maxlength="20" required aria-describedby="phone-help"></div>
+                <p class="field-help pair-help" id="phone-help">Ton téléphone sert à t'envoyer le lien et un rappel 15&nbsp;min avant (SMS ou WhatsApp).</p>
                 <p id="form-error" role="alert" style="display:none;color:#a23c35;font-size:13px;font-weight:700;margin:-4px 0 12px"></p>
                 <button class="btn-main form-submit" type="submit">Je réserve ma place gratuite <span aria-hidden="true">→</span></button>
-                <div class="trust"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg> 100&nbsp;% gratuit · Aucun paiement</div>
-                <p class="small-note">En t'inscrivant, tu acceptes de recevoir le lien et les rappels du live par e-mail et par SMS ou WhatsApp. Désinscription à tout moment.<br><strong>Démo locale :</strong> aucune inscription n'est envoyée.</p>
+                <div class="trust"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg> 100&nbsp;% gratuit · Sans carte bancaire · Débutant ou déjà artisan</div>
+                <p class="small-note">En t'inscrivant, tu acceptes de recevoir le lien, les rappels et nos messages liés au live et à sa suite, par e-mail, SMS, WhatsApp ou appel. Désinscription à tout moment.<br><strong>Démo locale :</strong> aucune inscription n'est envoyée.</p>
               </form>
             </div>
             <div id="signup-success" class="success" role="status" aria-live="polite">
-              <div class="ok" aria-hidden="true">✓</div><h3>C'est noté, <span id="success-name"></span> !</h3>
+              <div class="sx-progress"><div class="sx-bar" aria-hidden="true"><span></span></div><p><b>Ta place est gardée.</b> Plus que 2 minutes pour ne pas rater le lien.</p></div>
+              <h3>C'est noté, <span id="success-name"></span>&nbsp;! Ta place est gardée.</h3>
+              <ol class="sx-steps">
+                <li><div><b>Rejoins le groupe WhatsApp du live</b> avant de fermer cette page&nbsp;: tu y reçois le lien et le rappel à 19&nbsp;h&nbsp;45, même si notre e-mail tombe dans les spams.<a class="btn-wa" id="whatsapp-link" href="#" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.1-.3.3-.1.6.1.3.6 1.1 1.4 1.8 1 .9 1.8 1.1 2.1 1.3.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.4Z"/></svg> Rejoindre le groupe WhatsApp</a></div></li>
+                <li><div><b>Ajoute le live à ton agenda</b> et mets une alarme dimanche à 19&nbsp;h&nbsp;45.<div class="sx-cal"><a class="btn-ghost" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Live%20FORMA%20%E2%80%94%20Nettoyage%20de%20toitures%20et%20fa%C3%A7ades&amp;dates=20261129T190000Z/20261129T210000Z&amp;ctz=Europe/Paris&amp;details=Le%20lien%20du%20live%20t%27est%20envoy%C3%A9%20par%20e-mail%20et%20par%20SMS%20ou%20WhatsApp.">Google Agenda</a><a class="btn-ghost" id="ics-link" href="#" download="forma-live-29-novembre.ics">Apple / Outlook</a></div></div></li>
+                <li><div><b>Ouvre notre e-mail de confirmation.</b> Pas reçu&nbsp;? Regarde dans les spams ou l'onglet Promotions, et déplace-le dans ta boîte principale.</div></li>
+              </ol>
+              <p class="sx-vtitle">Le message d'Aymeric &amp; Marius avant dimanche</p>
               <div class="slot video"><video src="videos/confirmation.mp4" controls playsinline preload="metadata" onerror="this.parentNode.classList.add('empty');this.remove()"></video><span class="slot-label" aria-hidden="true">Vidéo d'Aymeric &amp; Marius<br>(à tourner)</span></div>
-              <p>Rendez-vous <strong>dimanche 29 novembre à 20&nbsp;h</strong>. Tu recevras le lien par e-mail et par SMS ou WhatsApp, puis un rappel 15&nbsp;min avant.<br>(Démo locale : rien n'a été envoyé.)</p>
-              <div class="actions">
-                <a class="btn-wa" id="whatsapp-link" href="#" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.1-.3.3-.1.6.1.3.6 1.1 1.4 1.8 1 .9 1.8 1.1 2.1 1.3.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.4Z"/></svg> Rejoindre le groupe WhatsApp du live</a>
-                <a class="btn-ghost" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Live%20FORMA%20%E2%80%94%20Nettoyage%20de%20toitures%20et%20fa%C3%A7ades&amp;dates=20261129T190000Z/20261129T210000Z&amp;ctz=Europe/Paris&amp;details=Le%20lien%20du%20live%20t%27est%20envoy%C3%A9%20par%20e-mail%20et%20par%20SMS%20ou%20WhatsApp.">Ajouter à mon agenda</a>
-              </div>
+              <div class="sx-take"><p><b>Dimanche à 20&nbsp;h&nbsp;:</b> comment attirer tes premiers clients, combien facturer et présenter ton devis, puis le matériel et tes 90 premiers jours.</p><p class="sx-surprise"><span aria-hidden="true">★</span> Bloque ta soirée jusqu'au bout&nbsp;: la surprise est réservée à ceux qui seront là en direct.</p><p class="sx-street">D'ici dimanche, compte les toits couverts de mousse dans ta rue. Tu verras pourquoi en live.</p></div>
+              <div class="sx-qbox"><div class="sx-quiz" id="sx-quiz"><div class="sxq" data-q="presence"><b>Dimanche 20&nbsp;h, c'est bloqué pour toi&nbsp;?</b> <span class="sxq-hint">5 clics, 10 secondes.</span><div class="sx-chips"><button type="button" data-v="oui">Oui, je serai là</button><button type="button" data-v="organiser">Je vais m'organiser</button></div></div><div class="sxq" data-q="profil" hidden><b>Pour qu'on prépare le live&nbsp;: tu es plutôt…</b><div class="sx-chips"><button type="button" data-v="debutant">Je pars de zéro</button><button type="button" data-v="artisan">Déjà artisan</button><button type="button" data-v="nettoyage">Déjà dans le nettoyage</button></div></div><div class="sxq" data-q="blocage" hidden><b>Ton plus gros blocage aujourd'hui&nbsp;?</b><div class="sx-chips"><button type="button" data-v="clients">Trouver des clients</button><button type="button" data-v="prix">Fixer mes prix</button><button type="button" data-v="materiel">Le matériel pour démarrer</button></div></div><div class="sxq" data-q="horizon" hidden><b>Et tu voudrais te lancer…</b><div class="sx-chips"><button type="button" data-v="janvier">Dès janvier</button><button type="button" data-v="6mois">Dans les 6 prochains mois</button><button type="button" data-v="renseigne">Je me renseigne</button></div></div><div class="sxq" data-q="budget" hidden><b>Pour démarrer (matériel, produits, véhicule), tu as prévu…</b><div class="sx-chips"><button type="button" data-v="dedie">Un budget dédié</button><button type="button" data-v="petit">Un petit budget</button><button type="button" data-v="rien">Rien pour l'instant</button></div></div><p class="sx-noted" hidden><b>Noté, merci.</b> <span id="sx-noted-txt">On en parle dimanche en direct.</span></p></div></div>
+              <p class="sx-when">Rendez-vous <strong>dimanche 29 novembre 2026 à 20&nbsp;h</strong> (heure de Paris), avec de quoi prendre des notes.<br>(Démo locale : rien n'a été envoyé.)</p>
+              <div class="sx-share"><p>Tu connais quelqu'un qui veut changer de métier, ou un artisan qui veut plus de chantiers&nbsp;?</p><a class="btn-ghost" id="share-link" href="#" target="_blank" rel="noopener">Lui envoyer le lien</a></div>
               <button type="button" class="reset" id="reset-form">Tester une autre inscription</button>
             </div>
+            <div id="live-over" class="live-over" hidden><h2>Le live du 29 novembre est terminé.</h2><p>On ne dévoilera plus notre méthode avant l'année prochaine.</p></div>
           </div>
         </aside>
       </div>
@@ -428,24 +577,37 @@
 
     <section class="keys" id="programme" aria-labelledby="keys-title">
       <div class="container">
-        <div class="keys-head"><p class="kicker">Pendant ce live</p><h2 id="keys-title">En une soirée, <em>les 3&nbsp;clés qui nous ont fait dépasser 10&nbsp;000&nbsp;€ par mois dès notre 2ᵉ&nbsp;mois&nbsp;:</em></h2></div>
+        <div class="keys-head"><p class="kicker">Pendant ce live</p><h2 id="keys-title">En une soirée, <em>les 3&nbsp;clés pour te lancer et décrocher des chantiers bien payés&nbsp;:</em></h2></div>
         <div class="keys-grid">
-          <article class="key-card"><span class="key-num">01</span><div class="key-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg></div><h3>Attirer tes premiers clients</h3><p>Où trouver les propriétaires qui cherchent déjà quelqu'un pour nettoyer leur toit ou leur façade, et le détail qui les fait t'appeler toi plutôt qu'un concurrent. Sans attendre le bouche-à-oreille.</p></article>
-          <article class="key-card"><span class="key-num">02</span><div class="key-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8Z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></div><h3>Vendre au bon prix</h3><p>Combien facturer un chantier, l'erreur sur le devis qui fait fuir les clients, et comment faire signer tes devis sans baisser tes prix.</p></article>
-          <article class="key-card"><span class="key-num">03</span><div class="key-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.3-2 5-2 5s3.7-.5 5-2c.7-.8.7-2.1-.1-2.9a2.2 2.2 0 0 0-2.9-.1Z"/><path d="m12 15-3-3a22 22 0 0 1 2-4A12.9 12.9 0 0 1 22 2c0 2.7-.8 7.5-6 11a22 22 0 0 1-4 2Z"/><path d="M9 12H4s.6-3 2-4c1.6-1.1 5 0 5 0M12 15v5s3-.6 4-2c1.1-1.6 0-5 0-5"/></svg></div><h3>Te lancer de zéro</h3><p>Le matériel vraiment utile, l'achat à ne surtout pas faire au début, et les étapes dans l'ordre pour tes 90 premiers jours. Déjà artisan&nbsp;? Tu verras comment ajouter ce service sans racheter tout ton matériel.</p></article>
+          <article class="key-card"><span class="key-num">01</span><div class="key-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg></div><h3>Attirer tes premiers clients</h3><p>Où trouver les propriétaires qui cherchent déjà quelqu'un pour nettoyer leur toit ou leur façade, et le détail qui les fait t'appeler toi plutôt qu'un concurrent. Sans attendre le bouche-à-oreille.</p><p class="key-take"><b>Tu repars avec&nbsp;:</b> comment nos clients nous trouvent, et ce qu'il faut mettre en place pour que les tiens te trouvent aussi.</p></article>
+          <article class="key-card"><span class="key-num">02</span><div class="key-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8Z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></div><h3>Vendre au bon prix</h3><p>Combien facturer un chantier, l'erreur sur le devis qui fait fuir les clients, et comment faire signer tes devis sans baisser tes prix.</p><p class="key-take"><b>Tu repars avec&nbsp;:</b> la façon de calculer ton prix et de présenter ton devis.</p></article>
+          <article class="key-card"><span class="key-num">03</span><div class="key-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.3-2 5-2 5s3.7-.5 5-2c.7-.8.7-2.1-.1-2.9a2.2 2.2 0 0 0-2.9-.1Z"/><path d="m12 15-3-3a22 22 0 0 1 2-4A12.9 12.9 0 0 1 22 2c0 2.7-.8 7.5-6 11a22 22 0 0 1-4 2Z"/><path d="M9 12H4s.6-3 2-4c1.6-1.1 5 0 5 0M12 15v5s3-.6 4-2c1.1-1.6 0-5 0-5"/></svg></div><h3>Te lancer de zéro</h3><p>Le matériel vraiment utile, l'achat à ne surtout pas faire au début, et les étapes dans l'ordre pour tes 90 premiers jours. Déjà artisan&nbsp;? Tu verras comment ajouter ce service à ce que tu fais déjà.</p><p class="key-take"><b>Tu repars avec&nbsp;:</b> la liste du matériel de départ et tes étapes des 90 premiers jours.</p></article>
         </div>
-        <div class="keys-cta"><a href="#inscription" class="btn-main">Je réserve ma place gratuite <span aria-hidden="true">→</span></a><p>Dimanche 29&nbsp;novembre · 20&nbsp;h · En&nbsp;ligne · 100&nbsp;%&nbsp;gratuit</p></div>
+        <div class="keys-cta"><a href="#inscription" class="btn-main">Je réserve ma place gratuite <span aria-hidden="true">→</span></a><p>Dimanche 29&nbsp;novembre · 20&nbsp;h · Ton prix, ton devis et tes 90 premiers jours</p></div>
       </div>
     </section>
 
-<section class="content proofs" id="preuves" aria-labelledby="preuves-title">
+    <section class="content" id="chantiers" aria-labelledby="chantiers-title">
       <div class="container">
-        <div class="section-head"><p class="kicker">Nos chiffres, sans filtre</p><h2 id="preuves-title">Ne nous crois pas sur parole&nbsp;: regarde nos comptes.</h2><p>Captures de nos comptes bancaires professionnels&nbsp;: l'argent réellement encaissé. Noms des clients et des sociétés masqués.</p></div>
-        <div class="shots">
-          <figure style="margin:0"><div class="slot shot"><img src="images/qonto-1.jpg" alt="Capture Qonto 1 : chiffre d'affaires encaissé, noms masqués" loading="lazy" onerror="this.parentNode.classList.add('empty');this.remove()"><span class="slot-label">Capture Qonto 1<br>(à fournir)</span></div><figcaption class="shot-cap">Chacun de nous deux : plus de 10&nbsp;000&nbsp;€ de chiffre d'affaires par mois dès son 2ᵉ&nbsp;mois d'activité</figcaption></figure>
-          <figure style="margin:0"><div class="slot shot"><img src="images/qonto-2.jpg" alt="Capture Qonto 2 : chiffre d'affaires encaissé, noms masqués" loading="lazy" onerror="this.parentNode.classList.add('empty');this.remove()"><span class="slot-label">Capture Qonto 2<br>(à fournir)</span></div><figcaption class="shot-cap">Chacun de nous deux : 30&nbsp;000&nbsp;€ de chiffre d'affaires sur un seul mois, en moins de 4&nbsp;mois d'activité</figcaption></figure>
-          <figure style="margin:0"><div class="slot shot"><img src="images/qonto-3.jpg" alt="Capture Qonto 3 : chiffre d'affaires encaissé, noms masqués" loading="lazy" onerror="this.parentNode.classList.add('empty');this.remove()"><span class="slot-label">Capture Qonto 3<br>(à fournir)</span></div><figcaption class="shot-cap">À nous deux : plus d'un million d'euros de chiffre d'affaires</figcaption></figure>
+        <div class="section-head"><p class="kicker">Le métier, en images</p><h2 id="chantiers-title">Avant, après&nbsp;: c'est ce résultat que les propriétaires paient.</h2><p>Mousse sur les tuiles, traces noires sur les murs&nbsp;: on les retire et la maison retrouve sa couleur. Ce changement se voit au premier coup d'œil, et c'est lui qui fait signer tes devis au bon prix.</p></div>
+        <div class="gallery" aria-label="Avant / après sur nos chantiers">
+          <div class="slot"><img src="images/chantier-1.jpg" onload="this.parentNode.classList.add('ok')" alt="Avant / après d'une toiture nettoyée sur un de nos chantiers" loading="lazy" onerror="this.parentNode.classList.add('empty');this.remove()"><span class="ba-tag" aria-hidden="true">Toiture</span><span class="slot-label">Avant / après&nbsp;: toiture<br>(à fournir)</span></div>
+          <div class="slot"><img src="images/chantier-2.jpg" onload="this.parentNode.classList.add('ok')" alt="Avant / après d'une façade nettoyée sur un de nos chantiers" loading="lazy" onerror="this.parentNode.classList.add('empty');this.remove()"><span class="ba-tag" aria-hidden="true">Façade</span><span class="slot-label">Avant / après&nbsp;: façade<br>(à fournir)</span></div>
+          <div class="slot"><img src="images/chantier-3.jpg" onload="this.parentNode.classList.add('ok')" alt="Avant / après d'une toiture nettoyée sur un de nos chantiers" loading="lazy" onerror="this.parentNode.classList.add('empty');this.remove()"><span class="ba-tag" aria-hidden="true">Toiture</span><span class="slot-label">Avant / après&nbsp;: toiture 2<br>(à fournir)</span></div>
         </div>
+        <div class="site-case" id="site-case" aria-label="Un de nos chantiers, en chiffres"><span class="sc-title">Le calcul d'un vrai chantier</span><span>Toiture de <span class="fill">[surface réelle] m²</span></span><span><b>Facturé&nbsp;:</b> <span class="fill">[montant réel]</span></span><span><b>Produits&nbsp;:</b> − <span class="fill">[montant réel]</span></span><span><b>Temps passé&nbsp;:</b> <span class="fill">[durée réelle]</span></span><span class="sc-rest">Véhicule, assurance, cotisations&nbsp;: le calcul complet de ce qui te reste, en live.</span></div>
+      </div>
+    </section>
+
+    <section class="content proofs" id="preuves" aria-labelledby="preuves-title">
+      <div class="container">
+        <div class="section-head"><p class="kicker">Nos chiffres, sans filtre</p><h2 id="preuves-title">Ne nous crois pas sur parole&nbsp;: regarde nos comptes.</h2><p>Deux entreprises distinctes, le même résultat deux fois&nbsp;: plus de 10&nbsp;000&nbsp;€ dès le 2ᵉ&nbsp;mois, chacun. Voici notre chiffre d'affaires réel, relevé sur nos comptes pros, noms masqués.</p></div>
+        <div class="shots">
+          <figure style="margin:0"><div class="slot shot"><a href="images/qonto-1.jpg" target="_blank" rel="noopener" aria-label="Agrandir la capture 1"><img src="images/qonto-1.jpg" onload="this.closest('.slot').classList.add('ok')" alt="Capture Qonto 1 : chiffre d'affaires encaissé, noms masqués" loading="lazy" onerror="this.closest('.slot').classList.add('empty');this.parentNode.remove()"></a><span class="slot-label">Capture Qonto 1, total du mois<br>et période entourés en rouge<br>(à fournir)</span></div><figcaption class="shot-cap">Aymeric, 2ᵉ&nbsp;mois d'activité&nbsp;: plus de 10&nbsp;000&nbsp;€ de chiffre d'affaires.</figcaption></figure>
+          <figure style="margin:0"><div class="slot shot"><a href="images/qonto-2.jpg" target="_blank" rel="noopener" aria-label="Agrandir la capture 2"><img src="images/qonto-2.jpg" onload="this.closest('.slot').classList.add('ok')" alt="Capture Qonto 2 : chiffre d'affaires encaissé, noms masqués" loading="lazy" onerror="this.closest('.slot').classList.add('empty');this.parentNode.remove()"></a><span class="slot-label">Capture Qonto 2, total du mois<br>et période entourés en rouge<br>(à fournir)</span></div><figcaption class="shot-cap">Marius, 2ᵉ&nbsp;mois d'activité&nbsp;: plus de 10&nbsp;000&nbsp;€ de chiffre d'affaires.</figcaption></figure>
+          <figure style="margin:0"><div class="slot shot"><a href="images/qonto-3.jpg" target="_blank" rel="noopener" aria-label="Agrandir la capture 3"><img src="images/qonto-3.jpg" onload="this.closest('.slot').classList.add('ok')" alt="Capture Qonto 3 : chiffre d'affaires encaissé, noms masqués" loading="lazy" onerror="this.closest('.slot').classList.add('empty');this.parentNode.remove()"></a><span class="slot-label">Capture Qonto 3, un des mois à 30&nbsp;000&nbsp;€,<br>total et période entourés en rouge<br>(à fournir)</span></div><figcaption class="shot-cap">Aymeric et Marius&nbsp;: chacun un mois à 30&nbsp;000&nbsp;€ de chiffre d'affaires, en moins de 4&nbsp;mois.</figcaption></figure>
+        </div>
+        <div class="course-cta proofs-cta"><a href="#inscription" class="btn-main">Je réserve ma place gratuite <span aria-hidden="true">→</span></a><span class="note">Dimanche 29&nbsp;novembre · 20&nbsp;h · Nos comptes, montrés en direct</span></div>
       </div>
     </section>
 
@@ -456,23 +618,17 @@
         <div class="value-grid who-grid">
           <article class="value-card"><div class="value-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#3064a9" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg></div><h3>Tu veux te lancer à ton compte</h3><p>Salarié, en reconversion, sans diplôme du bâtiment&nbsp;: tu veux un métier concret, où les clients existent déjà. On part de la base.</p></article>
           <article class="value-card"><div class="value-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#3064a9" stroke-width="1.8" stroke-linecap="round"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11Z"/></svg></div><h3>Tu es déjà dans le nettoyage</h3><p>Tu sais nettoyer, mais ton planning dépend du bouche-à-oreille. Tu veux plus de chantiers de nettoyage de toitures et façades, mieux payés.</p></article>
-          <article class="value-card"><div class="value-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#3064a9" stroke-width="1.8" stroke-linecap="round"><path d="m3 11 9-7 9 7M5 10v10h14V10M9 20v-6h6v6"/></svg></div><h3>Tu es artisan du bâtiment ou du jardin</h3><p>Couvreur, paysagiste, façadier&nbsp;: tu es déjà chez des propriétaires, et chacun a un toit et une façade. Tu veux leur vendre aussi le nettoyage de toitures et façades, au bon prix.</p></article>
+          <article class="value-card"><div class="value-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#3064a9" stroke-width="1.8" stroke-linecap="round"><path d="m3 11 9-7 9 7M5 10v10h14V10M9 20v-6h6v6"/></svg></div><h3>Tu es artisan du bâtiment ou du jardin</h3><p>Couvreur, paysagiste, façadier&nbsp;: tu es déjà chez des propriétaires, et chacun a un toit et une façade. Tu veux leur proposer aussi le nettoyage de toitures et façades, au bon prix.</p></article>
         </div>
-        <p class="anti"><strong>Ce que ce live n'est pas :</strong> ni un business IA révolutionnaire, ni un business à faire depuis ton canapé, ni de l'argent facile. <strong>C'est un vrai métier, de vrais chantiers et nos vrais chiffres.</strong></p>
-        <div class="course-cta who-cta"><a href="#inscription" class="btn-main">Je réserve ma place gratuite <span aria-hidden="true">→</span></a><span class="note">Dimanche 29&nbsp;novembre · 20&nbsp;h · En&nbsp;ligne · 100&nbsp;%&nbsp;gratuit</span></div>
+        <p class="anti"><strong>Ce que ce live n'est pas :</strong> ni un business IA, ni un business depuis ton canapé, ni de l'argent facile, ni un business sans mise de départ. <strong>C'est un vrai métier, avec nos vrais chiffres.</strong></p>
+        <div class="course-cta who-cta"><a href="#inscription" class="btn-main">Je réserve ma place gratuite <span aria-hidden="true">→</span></a><span class="note">Dimanche 29&nbsp;novembre · 20&nbsp;h · Débutant ou déjà artisan</span></div>
       </div>
     </section>
 
     <section class="founder" id="intervenants">
       <div class="container founder-grid">
-        <div class="founder-art"><img class="founder-photo" src="images/duo-animateurs.jpg" alt="Aymeric et Marius sur un chantier" loading="lazy" onerror="this.closest('.founder-art').classList.add('empty');this.remove()"><div class="caption-card"><span>NOS CHANTIERS</span><h3>De vrais toits, de vraies façades.<br>De vrais clients.</h3></div></div>
-        <div><p class="kicker">Tes animateurs&nbsp;: <span style="white-space:nowrap">Aymeric &amp; Marius</span></p><h2>On ne te parle que de ce qu'on a fait nous-mêmes.</h2><p>On a chacun lancé notre propre entreprise de nettoyage de toitures et façades, et chacun a fait un mois à 30&nbsp;000&nbsp;€ de chiffre d'affaires en moins de 4&nbsp;mois. Ce qu'on t'explique, on l'a appliqué sur nos propres chantiers.</p><p>Dans ce live, on te raconte aussi nos erreurs du début, pour que tu ne les refasses pas.</p><ul><li><span class="tick">✓</span> Nos comptes, montrés en direct</li><li><span class="tick">✓</span> Combien on facture, sans détour</li><li><span class="tick">✓</span> Tes questions, en direct</li></ul><div class="course-cta"><a href="#inscription" class="btn-main">Je réserve ma place gratuite <span aria-hidden="true">→</span></a><span class="note">Dimanche 29&nbsp;novembre · 20&nbsp;h · En&nbsp;ligne · 100&nbsp;%&nbsp;gratuit</span></div></div>
-      </div>
-      <div class="container"><p class="kicker gallery-kicker">Avant / après sur nos chantiers</p></div>
-      <div class="container gallery" aria-label="Avant / après sur nos chantiers">
-        <div class="slot"><img src="images/chantier-1.jpg" alt="Avant / après d'une toiture nettoyée sur un de nos chantiers" loading="lazy" onerror="this.parentNode.classList.add('empty');this.remove()"><span class="slot-label">Avant / après&nbsp;: toiture<br>(à fournir)</span></div>
-        <div class="slot"><img src="images/chantier-2.jpg" alt="Avant / après d'une façade nettoyée sur un de nos chantiers" loading="lazy" onerror="this.parentNode.classList.add('empty');this.remove()"><span class="slot-label">Avant / après&nbsp;: façade<br>(à fournir)</span></div>
-        <div class="slot"><img src="images/chantier-3.jpg" alt="Avant / après d'une toiture nettoyée sur un de nos chantiers" loading="lazy" onerror="this.parentNode.classList.add('empty');this.remove()"><span class="slot-label">Avant / après&nbsp;: toiture 2<br>(à fournir)</span></div>
+        <div class="founder-art"><img class="founder-photo" src="images/duo-animateurs.jpg" alt="Aymeric et Marius sur un chantier" loading="lazy" onerror="this.closest('.founder-art').classList.add('empty');this.remove()"><video class="founder-video" src="videos/presentation.mp4" poster="images/duo-animateurs.jpg" controls playsinline preload="metadata" aria-label="Aymeric et Marius se présentent (45 s)" onloadedmetadata="this.closest('.founder-art').classList.add('has-video')" onerror="this.closest('.founder-art').classList.add('no-video');this.remove()"></video><div class="caption-card"><h3>Aymeric &amp; Marius, sur un de nos chantiers.</h3></div></div>
+        <div><p class="kicker">Qui sont <span style="white-space:nowrap">Aymeric &amp; Marius&nbsp;?</span></p><h2>Deux entrepreneurs du nettoyage de toitures et façades, chacun avec sa propre entreprise.</h2><p>Chacun de notre côté, on a dû trouver nos premiers clients. Ce qu'on t'explique, on l'a appliqué sur nos propres chantiers.</p><p>En live, on te raconte aussi les erreurs qu'on a faites au début, pour que tu n'aies pas à les payer à ton tour.</p><ul><li><span class="tick">✓</span> Nos comptes, montrés en direct</li><li><span class="tick">✓</span> Combien on facture, sans détour</li><li><span class="tick">✓</span> Tes questions, en direct</li></ul><div class="course-cta"><a href="#inscription" class="btn-main">Je réserve ma place gratuite <span aria-hidden="true">→</span></a><span class="note">Dimanche 29&nbsp;novembre · 20&nbsp;h · Tes questions, en direct</span></div></div>
       </div>
     </section>
 
@@ -490,26 +646,25 @@
 
     <section class="content" id="faq">
       <div class="container faq"><div class="section-head"><p class="kicker">Tes questions</p><h2>Avant de t'inscrire.</h2></div>
-        <details><summary>Pourquoi le nettoyage de toitures et façades ?</summary><p>Parce qu'un toit ou une façade se facture comme un chantier du bâtiment&nbsp;: pas besoin de centaines de clients pour faire un bon mois. Et chaque maison a un toit et une façade&nbsp;: tes futurs clients habitent déjà autour de toi.</p></details>
-        <details><summary>10&nbsp;000&nbsp;€ par mois, c'est ce qui me reste&nbsp;?</summary><p>Non&nbsp;: c'est du chiffre d'affaires, ce que tes clients te paient. En direct, on parle franchement de ce qu'il faut déduire&nbsp;: matériel, produits, charges. Tu verras par toi-même si ça vaut le coup.</p></details>
-        <details><summary>Je pars de zéro&nbsp;: pas du bâtiment, jamais été à mon compte. C'est pour moi ?</summary><p>Oui. Ce métier ne demande pas de diplôme du bâtiment. On te montre ce qu'il faut savoir avant ton premier chantier, et les étapes dans l'ordre jusqu'à ton premier devis signé.</p></details>
-        <details><summary>Je suis salarié. Je dois quitter mon emploi ?</summary><p>Non. Le live sert justement à comprendre comment ça marche, chiffres à l'appui, avant de décider quoi que ce soit. Tu décides ensuite, à ton rythme.</p></details>
-        <details><summary>Je suis déjà artisan (couvreur, paysagiste, nettoyage). Ça m'apporte quoi ?</summary><p>Tu travailles déjà chez des propriétaires, et chacun a un toit et une façade. Le live se concentre sur ce qui remplit ton planning&nbsp;: trouver ces clients, combien facturer, et faire signer tes devis sans baisser tes prix.</p></details>
+        <details><summary>10&nbsp;000&nbsp;€ par mois, c'est ce qui me reste&nbsp;?</summary><p>Non&nbsp;: c'est du chiffre d'affaires, ce que tes clients te paient. En direct, on parle franchement de ce qu'il faut déduire&nbsp;: matériel, produits, charges. Tu repartiras en sachant ce qui reste vraiment, chiffres à l'appui.</p></details>
+        <details><summary>Je pars de zéro, ou je suis salarié à plein temps. C'est pour moi&nbsp;?</summary><p>Oui, sans diplôme du bâtiment. En live, on te montre par où commencer, dans quel ordre, et on te dit franchement ce qui est réaliste à côté d'un emploi.</p></details>
+        <details><summary>Je suis déjà artisan (couvreur, paysagiste, nettoyage). Ça m'apporte quoi ?</summary><p>Un service de plus à proposer aux propriétaires chez qui tu travailles déjà. Le live se concentre sur ce qui remplit ton planning&nbsp;: trouver de nouveaux clients, combien facturer, et faire signer tes devis sans baisser tes prix.</p></details>
         <details><summary>Je ne sais pas vendre et je ne connais personne. C'est grave&nbsp;?</summary><p>Non&nbsp;: c'est justement le cœur du live. On te montre comment des propriétaires qui ne te connaissent pas te demandent un devis, puis comment annoncer ton prix simplement, sans baratin. Pas besoin d'être un commercial né.</p></details>
-        <details><summary>Il n'y a pas déjà trop de monde sur ce marché ?</summary><p>Chaque toit et chaque façade se resalit avec les années&nbsp;: la demande revient sans cesse. Ce qui départage deux entreprises, c'est comment elles trouvent leurs clients et présentent leurs devis. C'est exactement ce qu'on te montre.</p></details>
-        <details><summary>Comment être sûr que ça marche ?</summary><p>On ne te demande pas de nous croire&nbsp;: on te montre nos comptes en direct, captures à l'appui, et on répond à tes questions. Tu jugeras par toi-même.</p></details>
+        <details><summary>Il n'y a pas déjà trop de monde sur ce marché ?</summary><p>Ce n'est pas le nombre d'entreprises qui compte&nbsp;: c'est qui le propriétaire appelle en premier, et quel devis il signe. C'est exactement ce qu'on te montre en live, avec nos propres chiffres.</p></details>
         <details><summary>Faut-il monter sur les toits ?</summary><p>Pour certains chantiers, oui. Mais beaucoup se traitent depuis le sol, avec des perches télescopiques. Dans le live, on t'explique le matériel de sécurité et comment travailler sans prendre de risque.</p></details>
-        <details><summary>Faut-il un camion ou un gros budget pour démarrer ?</summary><p>Pas besoin de tout acheter d'un coup. En direct, on détaille poste par poste le véhicule, le matériel et le budget de départ. Et surtout ce que tu peux éviter d'acheter au début.</p></details>
-        <details><summary>Comment se passe le live&nbsp;? Et si j'arrive en retard&nbsp;?</summary><p>En ligne, depuis chez toi&nbsp;: tu reçois le lien par e-mail et par SMS ou WhatsApp. Compte 1&nbsp;h&nbsp;30 à 2&nbsp;h, questions comprises. En retard&nbsp;? Le lien reste valable tout le live. Mais sois là dès 20&nbsp;h&nbsp;: la surprise est réservée à ceux qui sont là en direct.</p></details>
-        <details><summary>C'est vraiment gratuit ?</summary><p>Oui, 100&nbsp;% gratuit, sans carte bancaire.</p></details>
+        <details><summary>Faut-il un camion ou un gros budget pour démarrer ?</summary><p>Il faut un budget de départ&nbsp;: c'est un vrai métier, avec du vrai matériel. En direct, on le détaille poste par poste (véhicule, matériel, produits), et on te dit ce que tu peux éviter d'acheter au début.</p></details>
+        <details><summary>Comment se passe le live&nbsp;? Et si j'arrive en retard&nbsp;?</summary><p>En ligne&nbsp;: le lien arrive par e-mail, SMS ou WhatsApp. Compte 1&nbsp;h&nbsp;30 à 2&nbsp;h, questions comprises. En retard&nbsp;? Rejoins quand même, et reste jusqu'au bout&nbsp;: la surprise est pour ceux qui sont là en direct.</p></details>
+        <details><summary>C'est vraiment gratuit ?</summary><p>Oui, 100&nbsp;% gratuit, sans carte bancaire. On te demande juste d'être là dimanche à 20&nbsp;h, avec de quoi prendre des notes.</p></details>
       </div>
     </section>
 
-    <section class="cta-final"><div class="container"><p class="kicker" style="color:#7aafff">Live gratuit · Nettoyage de toitures et façades</p><h2>Les maisons à nettoyer sont partout. <span>On te montre comment décrocher les chantiers.</span></h2><p class="cta-punch">Les demandes de nettoyage repartent au printemps, dans 3&nbsp;mois. Ceux qui se lancent cet hiver seront prêts à prendre les chantiers. Les autres y&nbsp;penseront encore.</p><p class="when">Dimanche 29 novembre 2026 · 20&nbsp;h (heure de Paris) · En&nbsp;ligne<br><span style="font-weight:650;color:#c6d6e9;display:inline-flex;gap:7px;align-items:center"><span aria-hidden="true">🎁</span>Une surprise réservée à ceux qui seront là en direct.</span></p><a href="#inscription" class="btn-main">Je réserve ma place gratuite <span aria-hidden="true">→</span></a></div></section>
+    <section class="cta-final"><div class="container"><p class="kicker" style="color:#7aafff">Live gratuit · Nettoyage de toitures et façades</p><h2>Les maisons à nettoyer sont partout. <span>Le 29, on te montre comment trouver tes clients et vendre au bon prix.</span></h2><p class="cta-punch">C'est notre dernier live de l'année&nbsp;: après le 29&nbsp;novembre, on ne dévoilera plus notre méthode avant l'année prochaine. Réserve ta place maintenant&nbsp;: trois champs, et c'est fait.</p><p class="when">Dimanche 29 novembre 2026 · 20&nbsp;h (heure de Paris) · En&nbsp;ligne</p><a href="#inscription" class="btn-main">Je réserve ma place gratuite <span aria-hidden="true">→</span></a></div></section>
   </main>
   <footer><div class="container"><a class="brand" href="#top" style="font-size:21px"><span class="brand-mark" aria-hidden="true" style="width:29px;height:29px"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="m2 12 10-8 10 8M5 11v9h14v-9M9 20v-7h6v7" stroke="#112844" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>FORMA.</a><div class="footer-note">© 2026 FORMA. Résultats réels des fondateurs, exprimés en chiffre d'affaires. Les tiens dépendront de ton travail, de ta zone et de ta régularité.</div></div></footer>
   <div class="tools"><details><summary>Outils de test local <span style="opacity:.7">(ouvrir)</span></summary><p>Les essais du formulaire restent dans ce navigateur. Ce ne sont pas de vraies inscriptions.</p><button type="button" id="export">Exporter les essais (CSV)</button><button type="button" id="clear">Effacer les essais</button><span id="tool-status" role="status"></span></details></div>
-  <div class="mobile-cta"><a href="#inscription" class="btn-main">Je réserve ma place gratuite <span aria-hidden="true">→</span></a></div>
+  <dialog class="zoom-pop" id="zoom-pop" aria-label="Capture agrandie"><img id="zoom-img" alt=""><button type="button" class="zp-close" id="zoom-close">Fermer ✕</button></dialog>
+  <div class="mobile-cta hide"><a href="#inscription" class="btn-main">Je réserve ma place gratuite <span aria-hidden="true">→</span></a></div>
+  <dialog class="exit-pop" id="exit-pop" aria-labelledby="exit-title"><div class="ep-in"><h2 id="exit-title">Attends.</h2><p>C'est notre dernier live de l'année&nbsp;: après le 29&nbsp;novembre, on ne dévoilera plus notre méthode avant l'année prochaine.</p><p class="ep-when"><b>Dimanche 29 novembre · 20&nbsp;h (heure de Paris) · En ligne</b><br>Comment trouver tes clients et vendre au bon prix.</p><a href="#inscription" class="btn-main" id="exit-go">Je réserve ma place gratuite <span aria-hidden="true">→</span></a><button type="button" class="ep-close" id="exit-close">Fermer</button></div></dialog>
   <script>
   (()=>{
     const KEY='forma_demo_signups_v3';
@@ -519,27 +674,70 @@
     const form=$('signup-form'),error=$('form-error'),success=$('signup-success'),section=$('form-section');
     const getRecords=()=>{try{return JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){return []}};
     const mcta=document.querySelector('.mobile-cta');let signed=false;
+    if(!('IntersectionObserver' in window)) mcta.classList.remove('hide');
     if('IntersectionObserver' in window){const seen=new Map(),io=new IntersectionObserver(es=>{es.forEach(e=>seen.set(e.target,e.isIntersecting&&e.target.offsetParent!==null));mcta.classList.toggle('hide',signed||[...seen.values()].some(Boolean));},{threshold:.15});io.observe($('inscription'));const ha=document.querySelector('.hero .hero-actions');if(ha)io.observe(ha);document.querySelectorAll('main .btn-main').forEach(b=>io.observe(b));}
-    const fail=(m,id)=>{error.textContent=m;error.style.display='block';if(id){const f=$(id);f.setAttribute('aria-invalid','true');f.setAttribute('aria-describedby','form-error');f.focus();}};
+    const fail=(m,id)=>{error.textContent=m;error.style.display='block';if(id){const f=$(id);f.setAttribute('aria-invalid','true');f.setAttribute('aria-describedby',id==='phone'?'form-error phone-help':'form-error');f.focus();}};
     // Compte à rebours vers le dimanche 29/11/2026 20 h, heure de Paris (UTC+1)
-    const LIVE=Date.UTC(2026,10,29,19,0,0), cd=$('countdown');
+    const LIVE=Date.UTC(2026,10,29,19,0,0), cd=$('countdown'), cd2=$('countdown2');
     const tick=()=>{const d=LIVE-Date.now();
-      if(d<=0){cd.textContent=d>-3*3600e3?'En direct maintenant':'Live terminé';return;}
+      if(d<=0){cd.textContent=d>-3*3600e3?'En direct maintenant':'Live terminé';if(cd2)cd2.textContent=cd.textContent;return;}
       const j=Math.floor(d/864e5),h=Math.floor(d%864e5/36e5),m=Math.floor(d%36e5/6e4);
-      cd.textContent=(matchMedia('(max-width:600px)').matches?'Dim. 29 nov. · 20 h · dans ':'Début dans ')+(j?j+' j ':'')+String(h).padStart(2,'0')+' h '+String(m).padStart(2,'0')+' min';};
+      const rest=(j?j+' j ':'')+String(h).padStart(2,'0')+' h '+String(m).padStart(2,'0')+' min';cd.textContent=(matchMedia('(max-width:600px)').matches?'Dim. 29 nov. · 20 h · dans ':'Début dans ')+rest;if(cd2)cd2.textContent='Début dans '+rest;};
     tick();setInterval(tick,30e3);addEventListener('resize',tick);
+    // Après le live (+3 h) : plus d'inscription possible (en production, rediriger aussi la landing côté serveur)
+    const liveOver=Date.now()>LIVE+3*3600e3;
+    if(liveOver){section.style.display='none';$('live-over').hidden=false;}
+    // Agenda Apple / Outlook : fichier .ics généré dans le navigateur (rappel 15 min avant = 19 h 45, comme le SMS)
+    try{const ics=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//FORMA//Live//FR','CALSCALE:GREGORIAN','METHOD:PUBLISH','BEGIN:VEVENT','UID:forma-live-20261129@forma','DTSTAMP:20261120T120000Z','DTSTART:20261129T190000Z','DTEND:20261129T210000Z','SUMMARY:Live FORMA — Nettoyage de toitures et façades','DESCRIPTION:Le lien t\'est envoyé par e-mail et par SMS ou WhatsApp.','BEGIN:VALARM','ACTION:DISPLAY','DESCRIPTION:Le live FORMA commence dans 15 minutes','TRIGGER:-PT15M','END:VALARM','END:VEVENT','END:VCALENDAR'].join('\r\n');
+      $('ics-link').href=URL.createObjectURL(new Blob([ics],{type:'text/calendar;charset=utf-8'}));}catch(e){$('ics-link').remove();}
+    // Chantier chiffré : tant que les vrais chiffres ne sont pas saisis, la carte n'apparaît qu'en démo locale (jamais de [crochets] en ligne)
+    const sc=$('site-case');if(sc&&sc.textContent.includes('[')&&/^https?:$/.test(location.protocol)) sc.remove();
+    // Captures Qonto : agrandies dans la page au clic ou au toucher
+    const zp=$('zoom-pop'),zi=$('zoom-img'),closeZoom=()=>{try{zp.close()}catch(e){zp.removeAttribute('open')}};
+    document.querySelectorAll('.proofs .shot a').forEach(a=>a.addEventListener('click',e=>{if(!zp.showModal)return;e.preventDefault();const im=a.querySelector('img');zi.src=a.href;zi.alt=im?im.alt:'';zp.showModal();}));
+    zp.addEventListener('click',closeZoom);
+    // Écran merci : 5 questions en un clic (profil, blocage, horizon, budget, présence), ajoutées à l'inscription. En production : les envoyer au CRM avec l'e-mail comme clé.
+    let lastIdx=-1;
+    const quiz=$('sx-quiz');
+    quiz.addEventListener('click',e=>{const b=e.target.closest('button[data-v]');if(!b)return;const q=b.closest('.sxq');
+      q.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'));
+      try{const list=getRecords();if(list[lastIdx]){list[lastIdx][q.dataset.q]=b.dataset.v;localStorage.setItem(KEY,JSON.stringify(list));}}catch(err){}
+      const next=q.nextElementSibling;
+      if(next&&next.classList.contains('sxq')){q.hidden=true;next.hidden=false;next.querySelector('button').focus();}
+      else{q.hidden=true;const n=quiz.querySelector('.sx-noted'),bl=(quiz.querySelector('[data-q=blocage] [aria-pressed=true]')||{}).dataset;const part={clients:'Attirer tes premiers clients',prix:'Vendre au bon prix',materiel:'Te lancer de zéro'}[bl&&bl.v];$('sx-noted-txt').textContent=part?'Dimanche, la partie « '+part+' » est pour toi : garde de quoi noter.':'On en parle dimanche en direct.';n.hidden=false;}
+    });
+    const resetQuiz=()=>{quiz.querySelectorAll('.sxq').forEach((q,i)=>{q.hidden=i>0;q.querySelectorAll('button').forEach(x=>x.removeAttribute('aria-pressed'))});quiz.querySelector('.sx-noted').hidden=true;};
+    // Inviter un proche : lien WhatsApp avec l'adresse de la page (sans paramètres de suivi)
+    $('share-link').href='https://wa.me/?text='+encodeURIComponent('Live gratuit dimanche 29 novembre à 20 h sur le business du nettoyage de toitures et façades : '+location.origin+location.pathname);
+    // Popup de sortie (ordinateur, une seule fois par visite)
+    const pop=$('exit-pop'),closePop=()=>{try{pop.close()}catch(e){pop.removeAttribute('open')}};
+    let popSeen=false;try{popSeen=sessionStorage.getItem('forma_exit_seen')==='1'}catch(e){}
+    if(pop&&pop.showModal&&!liveOver){
+      const t0=Date.now(),desk=matchMedia('(min-width:801px) and (pointer:fine)');
+      document.addEventListener('mouseout',e=>{
+        if(popSeen||signed||!desk.matches||e.relatedTarget||e.clientY>0||Date.now()-t0<4000) return;
+        popSeen=true;try{sessionStorage.setItem('forma_exit_seen','1')}catch(err){}
+        pop.showModal();
+      });
+    }
+    $('exit-close').addEventListener('click',closePop);
+    $('exit-go').addEventListener('click',closePop);
+    pop.addEventListener('click',e=>{if(e.target===pop)closePop();});
     form.addEventListener('submit',e=>{
       e.preventDefault();error.style.display='none';
+      if($('website').value){$('success-name').textContent='';section.style.display='none';success.classList.add('active');return;} // robot : on ne garde rien
       ['firstName','email','phone'].forEach(id=>{$(id).removeAttribute('aria-invalid');$(id).removeAttribute('aria-describedby')});
+      $('phone').setAttribute('aria-describedby','phone-help');
       const firstName=$('firstName').value.trim(),email=$('email').value.trim();
       let phone=$('phone').value.replace(/\(0\)/,'').replace(/[^\d+]/g,'');
       if(phone.startsWith('00')) phone='+'+phone.slice(2);
       if(/^0[1-9]\d{8}$/.test(phone)) phone='+33'+phone.slice(1);
       if(firstName.length<2) return fail('Indique ton prénom.','firstName');
-      if(!/^\S+@\S+\.\S+$/.test(email)) return fail('Indique une adresse e-mail valide.','email');
       if(!/^\+[1-9]\d{8,14}$/.test(phone)) return fail('Indique un numéro de téléphone valide.','phone');
+      if(!/^\S+@\S+\.\S+$/.test(email)) return fail('Indique une adresse e-mail valide.','email');
       const qs=new URLSearchParams(location.search);
-      try{const list=getRecords();list.push({firstName,email,phone,utm_source:qs.get('utm_source')||'',utm_campaign:qs.get('utm_campaign')||'',utm_content:qs.get('utm_content')||'',createdAt:new Date().toISOString()});localStorage.setItem(KEY,JSON.stringify(list));}catch(e){/* stockage indisponible : on confirme quand même */}
+            try{const list=getRecords();list.push({firstName,email,phone,utm_source:qs.get('utm_source')||'',utm_campaign:qs.get('utm_campaign')||'',utm_content:qs.get('utm_content')||'',createdAt:new Date().toISOString()});localStorage.setItem(KEY,JSON.stringify(list));lastIdx=list.length-1;}catch(e){/* stockage indisponible : on confirme quand même */}
+      resetQuiz();
       $('success-name').textContent=firstName;
       section.style.display='none';success.classList.add('active');
       signed=true;mcta.classList.add('hide');
@@ -550,7 +748,7 @@
       const rows=getRecords(),st=$('tool-status');
       if(!rows.length){st.textContent=' Aucun essai à exporter.';return;}
       const q=s=>'"'+String(s??'').replaceAll('"','""')+'"';
-      const csv='﻿Prénom,Email,Téléphone,UTM source,UTM campagne,UTM contenu,Date UTC\n'+rows.map(r=>[r.firstName,r.email,r.phone,r.utm_source,r.utm_campaign,r.utm_content,r.createdAt].map(q).join(',')).join('\n');
+      const csv='﻿Prénom,Email,Téléphone,Profil,Blocage,Horizon,Budget,Présence,UTM source,UTM campagne,UTM contenu,Date UTC\n'+rows.map(r=>[r.firstName,r.email,r.phone,r.profil,r.blocage,r.horizon,r.budget,r.presence,r.utm_source,r.utm_campaign,r.utm_content,r.createdAt].map(q).join(',')).join('\n');
       const url=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));
       const a=document.createElement('a');a.href=url;a.download='forma-inscriptions-demo.csv';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),3000);
       st.textContent=' Export terminé.';
