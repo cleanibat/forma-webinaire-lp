@@ -8,8 +8,8 @@ Tant qu'un fichier manque, la page affiche un emplacement en pointillés.
 | `images/aymeric.jpg` et `images/marius.jpg` | Deux ronds en tête du formulaire d'inscription (ordinateur) | Une photo de chacun, visage bien visible, cadrage carré |
 | `images/duo-hero.jpg` | Photo horizontale à côté de « À deux, plus d'un million… » (haut de page) | Vous deux sur un chantier, visages bien visibles, format 16:9 |
 | `images/duo-animateurs.jpg` | Grand visuel du bloc « Qui sont Aymeric & Marius ? » (sert aussi de couverture à la vidéo) | Vous deux, idéalement sur chantier, format vertical 4:5 |
-| `videos/presentation.mp4` | Bloc « Qui sont Aymeric & Marius ? » | 30 à 45 s face caméra sur chantier, format 4:5 : qui vous êtes, vos débuts, pourquoi ce live. Seuls chiffres : le million à deux, 10 000 € dès le 2e mois, un mois à 30 000 €. **Rien sur ce qui sera vendu.** |
-| `images/qonto-1.jpg` à `qonto-3.jpg` | Section « Nos chiffres, sans filtre » | Captures Qonto, **noms de clients, IBAN et soldes perso masqués**, format vertical. **Entourer en rouge le total du mois et la période.** 1 = Aymeric 2e mois, 2 = Marius 2e mois, 3 = un des mois à 30 000 € |
+| `videos/presentation.mp4` | Bloc « Qui sont Aymeric & Marius ? » | 30 à 45 s face caméra sur chantier, format 4:5 : qui vous êtes, vos débuts, pourquoi ce live. Seuls chiffres : le million à deux, 10 000 € dès le 2e mois. **Rien sur ce qui sera vendu.** |
+| `images/qonto-2.jpg` | Section « Nos chiffres, sans filtre » | Captures Qonto, **noms de clients, IBAN et soldes perso masqués**, format vertical. **Entourer en rouge le total du mois et la période.** Marius, 2e mois (la preuve 1 d'Aymeric est en place : courbe Qonto janv.–mars 2025) |
 | `images/chantier-1.jpg` à `chantier-3.jpg` | Galerie avant / après sous le bloc animateurs | 1 : avant / après toiture · 2 : avant / après façade · 3 : avant / après toiture 2 (photos montées côte à côte), sans adresse ni plaque visible |
 | `videos/confirmation.mp4` | Écran après inscription | Vidéo verticale 60 à 90 s (voir `script-video-confirmation.md`) |
 
