@@ -509,6 +509,8 @@
     .site-case .sc-proof{flex-basis:100%;margin:6px 0 0}
     .site-case .sc-proof img{display:block;width:100%;max-width:340px;border:1px solid #dee7f2;border-radius:12px;box-shadow:0 8px 22px rgba(13,35,65,.08)}
     .site-case .sc-proof figcaption{margin-top:6px;font-size:12px;color:#5f6f84}
+    .proofs .shot.shot-chart{background:#050505;border-color:#050505}
+    .proofs .shot.shot-chart img{object-fit:contain;object-position:center;inset:0;width:100%;height:100%}
     .rv-proof{margin:0}
     .rv-proof img{display:block;width:100%;border:1px solid #dee7f2;border-radius:10px}
     .rv-proof figcaption{margin-top:5px;font-size:11.5px;color:#5f6f84}
@@ -621,23 +623,12 @@
       </div>
     </section>
 
-    <section class="content" id="chantiers" aria-labelledby="chantiers-title">
-      <div class="container">
-        <div class="section-head"><p class="kicker">Le métier, en images</p><h2 id="chantiers-title">Avant, après&nbsp;: c'est ce résultat que les propriétaires paient.</h2><p>Mousse sur les tuiles, traces noires sur les murs&nbsp;: on les retire et la maison retrouve sa couleur. Ce changement se voit au premier coup d'œil, et c'est lui qui fait signer tes devis au bon prix.</p></div>
-        <div class="gallery" aria-label="Avant / après sur nos chantiers">
-          <div class="slot"><img src="images/chantier-1.jpg" onload="this.parentNode.classList.add('ok')" alt="Avant / après d'une toiture nettoyée sur un de nos chantiers" loading="lazy" onerror="this.parentNode.classList.add('empty');this.remove()"><span class="ba-tag" aria-hidden="true">Toiture</span><span class="slot-label">Avant / après&nbsp;: toiture<br>(à fournir)</span></div>
-          <div class="slot"><img src="images/chantier-2.jpg" onload="this.parentNode.classList.add('ok')" alt="Avant / après d'une façade nettoyée sur un de nos chantiers" loading="lazy" onerror="this.parentNode.classList.add('empty');this.remove()"><span class="ba-tag" aria-hidden="true">Façade</span><span class="slot-label">Avant / après&nbsp;: façade<br>(à fournir)</span></div>
-          <div class="slot"><img src="images/chantier-3.jpg" onload="this.parentNode.classList.add('ok')" alt="Avant / après d'une toiture nettoyée sur un de nos chantiers" loading="lazy" onerror="this.parentNode.classList.add('empty');this.remove()"><span class="ba-tag" aria-hidden="true">Toiture</span><span class="slot-label">Avant / après&nbsp;: toiture 2<br>(à fournir)</span></div>
-        </div>
-        <div class="site-case" id="site-case" aria-label="Un vrai chantier, en chiffres"><span class="sc-title">Le calcul d'un vrai chantier</span><span>Nettoyage d'une façade</span><span><b>Facturé&nbsp;:</b> <strong class="sc-val">1&nbsp;390&nbsp;€</strong></span><span><b>Temps passé&nbsp;:</b> <strong class="sc-val">1&nbsp;journée</strong></span><span class="sc-link">C'est le chantier de l'avis de Stéphane&nbsp;B., plus bas, avec le virement reçu.</span><span class="sc-rest">Produits, véhicule, assurance, cotisations&nbsp;: le calcul complet de ce qui te reste, en live.</span></div>
-      </div>
-    </section>
 
     <section class="content proofs" id="preuves" aria-labelledby="preuves-title">
       <div class="container">
         <div class="section-head"><p class="kicker">Nos chiffres, sans filtre</p><h2 id="preuves-title">Ne nous crois pas sur parole&nbsp;: regarde nos comptes.</h2><p>Deux entreprises distinctes, le même résultat deux fois&nbsp;: plus de 10&nbsp;000&nbsp;€ dès le 2ᵉ&nbsp;mois, chacun. Voici notre chiffre d'affaires réel, relevé sur nos comptes pros, noms masqués.</p></div>
         <div class="shots">
-          <figure style="margin:0"><div class="slot shot"><a href="images/qonto-1.jpg" target="_blank" rel="noopener" aria-label="Agrandir la capture 1"><img src="images/qonto-1.jpg" onload="this.closest('.slot').classList.add('ok')" alt="Capture Qonto 1 : chiffre d'affaires encaissé, noms masqués" loading="lazy" onerror="this.closest('.slot').classList.add('empty');this.parentNode.remove()"></a><span class="slot-label">Capture Qonto 1, total du mois<br>et période entourés en rouge<br>(à fournir)</span></div><figcaption class="shot-cap">Aymeric, 2ᵉ&nbsp;mois d'activité&nbsp;: plus de 10&nbsp;000&nbsp;€ de chiffre d'affaires.</figcaption></figure>
+          <figure style="margin:0"><div class="slot shot shot-chart"><a href="images/qonto-1.jpg" target="_blank" rel="noopener" aria-label="Agrandir la capture 1"><img src="images/qonto-1.jpg" onload="this.closest('.slot').classList.add('ok')" alt="Courbe Qonto des entrées mensuelles du compte pro d'Aymeric : création de la société en janvier 2025, 1er mois d'activité en février, 2e mois en mars" loading="lazy" onerror="this.closest('.slot').classList.add('empty');this.parentNode.remove()"></a><span class="slot-label">Capture Qonto 1, total du mois<br>et période entourés en rouge<br>(à fournir)</span></div><figcaption class="shot-cap">Aymeric, 2ᵉ&nbsp;mois d'activité&nbsp;: plus de 10&nbsp;000&nbsp;€ de chiffre d'affaires.</figcaption></figure>
           <figure style="margin:0"><div class="slot shot"><a href="images/qonto-2.jpg" target="_blank" rel="noopener" aria-label="Agrandir la capture 2"><img src="images/qonto-2.jpg" onload="this.closest('.slot').classList.add('ok')" alt="Capture Qonto 2 : chiffre d'affaires encaissé, noms masqués" loading="lazy" onerror="this.closest('.slot').classList.add('empty');this.parentNode.remove()"></a><span class="slot-label">Capture Qonto 2, total du mois<br>et période entourés en rouge<br>(à fournir)</span></div><figcaption class="shot-cap">Marius, 2ᵉ&nbsp;mois d'activité&nbsp;: plus de 10&nbsp;000&nbsp;€ de chiffre d'affaires.</figcaption></figure>
           <figure style="margin:0"><div class="slot shot"><a href="images/qonto-3.jpg" target="_blank" rel="noopener" aria-label="Agrandir la capture 3"><img src="images/qonto-3.jpg" onload="this.closest('.slot').classList.add('ok')" alt="Capture Qonto 3 : chiffre d'affaires encaissé, noms masqués" loading="lazy" onerror="this.closest('.slot').classList.add('empty');this.parentNode.remove()"></a><span class="slot-label">Capture Qonto 3, un des mois à 30&nbsp;000&nbsp;€,<br>total et période entourés en rouge<br>(à fournir)</span></div><figcaption class="shot-cap">Aymeric et Marius&nbsp;: chacun un mois à 30&nbsp;000&nbsp;€ de chiffre d'affaires, en moins de 4&nbsp;mois.</figcaption></figure>
         </div>
@@ -664,6 +655,18 @@
       <div class="container founder-grid">
         <div class="founder-art"><img class="founder-photo" src="images/duo-animateurs.jpg" alt="Aymeric et Marius sur un chantier" loading="lazy" onerror="this.closest('.founder-art').classList.add('empty');this.remove()"><video class="founder-video" src="videos/presentation.mp4" poster="images/duo-animateurs.jpg" controls playsinline preload="metadata" aria-label="Aymeric et Marius se présentent (45 s)" onloadedmetadata="this.closest('.founder-art').classList.add('has-video')" onerror="this.closest('.founder-art').classList.add('no-video');this.remove()"></video><div class="caption-card"><h3>Aymeric &amp; Marius, sur un de nos chantiers.</h3></div></div>
         <div><p class="kicker">Qui sont <span style="white-space:nowrap">Aymeric &amp; Marius&nbsp;?</span></p><h2>Deux entrepreneurs du nettoyage de toitures et façades, chacun avec sa propre entreprise.</h2><p>Chacun de notre côté, on a dû trouver nos premiers clients. Ce qu'on t'explique, on l'a appliqué sur nos propres chantiers.</p><p>En live, on te raconte aussi les erreurs qu'on a faites au début, pour que tu n'aies pas à les payer à ton tour.</p><ul><li><span class="tick">✓</span> Nos comptes, montrés en direct</li><li><span class="tick">✓</span> Combien on facture, sans détour</li><li><span class="tick">✓</span> Tes questions, en direct</li></ul><div class="course-cta"><a href="#inscription" class="btn-main">Je réserve ma place gratuite <span aria-hidden="true">→</span></a><span class="note">Dimanche 29&nbsp;novembre · 20&nbsp;h · Tes questions, en direct</span></div></div>
+      </div>
+    </section>
+
+    <section class="content" id="chantiers" aria-labelledby="chantiers-title">
+      <div class="container">
+        <div class="section-head"><p class="kicker">Le métier, en images</p><h2 id="chantiers-title">Avant, après&nbsp;: c'est ce résultat que les propriétaires paient.</h2><p>Mousse sur les tuiles, traces noires sur les murs&nbsp;: on les retire et la maison retrouve sa couleur. Ce changement se voit au premier coup d'œil, et c'est lui qui fait signer tes devis au bon prix.</p></div>
+        <div class="gallery" aria-label="Avant / après sur nos chantiers">
+          <div class="slot"><img src="images/chantier-1.jpg" onload="this.parentNode.classList.add('ok')" alt="Avant / après d'une toiture nettoyée sur un de nos chantiers" loading="lazy" onerror="this.parentNode.classList.add('empty');this.remove()"><span class="ba-tag" aria-hidden="true">Toiture</span><span class="slot-label">Avant / après&nbsp;: toiture<br>(à fournir)</span></div>
+          <div class="slot"><img src="images/chantier-2.jpg" onload="this.parentNode.classList.add('ok')" alt="Avant / après d'une façade nettoyée sur un de nos chantiers" loading="lazy" onerror="this.parentNode.classList.add('empty');this.remove()"><span class="ba-tag" aria-hidden="true">Façade</span><span class="slot-label">Avant / après&nbsp;: façade<br>(à fournir)</span></div>
+          <div class="slot"><img src="images/chantier-3.jpg" onload="this.parentNode.classList.add('ok')" alt="Avant / après d'une toiture nettoyée sur un de nos chantiers" loading="lazy" onerror="this.parentNode.classList.add('empty');this.remove()"><span class="ba-tag" aria-hidden="true">Toiture</span><span class="slot-label">Avant / après&nbsp;: toiture 2<br>(à fournir)</span></div>
+        </div>
+        <div class="site-case" id="site-case" aria-label="Un vrai chantier, en chiffres"><span class="sc-title">Le calcul d'un vrai chantier</span><span>Nettoyage d'une façade</span><span><b>Facturé&nbsp;:</b> <strong class="sc-val">1&nbsp;390&nbsp;€</strong></span><span><b>Temps passé&nbsp;:</b> <strong class="sc-val">1&nbsp;journée</strong></span><span class="sc-link">C'est le chantier de l'avis de Stéphane&nbsp;B., plus bas, avec le virement reçu.</span><span class="sc-rest">Produits, véhicule, assurance, cotisations&nbsp;: le calcul complet de ce qui te reste, en live.</span></div>
       </div>
     </section>
 
