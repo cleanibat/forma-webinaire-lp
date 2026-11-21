@@ -15,6 +15,6 @@ Tant qu'un fichier manque, la page affiche un emplacement en pointillés.
 
 ## À me donner en texte
 
-- **3 avis Google** de vos clients : le texte, le prénom (ou l'initiale) et la ville si vous voulez. Sans nom de société.
-- **Un vrai chantier chiffré** (bloc « Un de nos chantiers ») : surface, montant facturé, coût des produits, temps passé. Tant que les `[crochets]` restent, le bloc ne s'affiche qu'en local, jamais en ligne.
+- **2 avis Google de plus** (le 1er, Stéphane B., est en place avec ses photos avant/après) de vos clients : le texte, le prénom (ou l'initiale) et la ville si vous voulez. Sans nom de société.
+- **Un vrai chantier chiffré** : FAIT (façade 1 790 € en 1 journée, le chantier de l'avis de Stéphane B.).
 - **Le lien d'invitation du groupe WhatsApp** du live : à coller dans `index.html`, ligne `const WHATSAPP_URL=''`.

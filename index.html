@@ -489,6 +489,21 @@
     .profil-opts label{padding:8px 9px;font-size:12px;align-items:center}
     @media(max-width:600px){.profil-opts{display:flex;flex-wrap:wrap;gap:7px}.profil-opts label{flex:1 1 auto;padding:9px 10px;font-size:13px;white-space:nowrap}}
     .sx-quiz b{color:#11274a}
+    .review-real blockquote{margin:0;font-size:15.5px;line-height:1.55;color:#152640;font-weight:600}
+    .review-real b{color:#152640}
+    .rv-deal{margin:0;font-size:13.5px;line-height:1.45;color:#2a4466;background:#f1f6fd;border:1px solid #d7e6fc;border-radius:10px;padding:8px 11px}
+    .site-case .sc-val{color:#11274a;font-size:17px;font-weight:850;letter-spacing:-.01em}
+    .site-case .sc-link{flex-basis:100%;font-size:13px;color:#566c88}
+    .rv-photos{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+    .rv-photos figure{margin:0;position:relative;border-radius:10px;overflow:hidden;aspect-ratio:1}
+    .rv-photos img{width:100%;height:100%;object-fit:cover;display:block}
+    .rv-photos figcaption{position:absolute;left:6px;top:6px;background:rgba(10,24,46,.78);color:#fff;font-size:10.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:3px 7px;border-radius:6px}
+    /* Accroche sous le H1 : un seul style sobre pour les deux paragraphes */
+    .hero .hero-copy,.hero .hero-focus{font-size:18px;line-height:1.6;color:#d6e2f2;font-weight:400;padding-left:0;border-left:0;max-width:560px}
+    .hero .hero-copy strong,.hero .hero-focus strong{color:#fff;font-weight:700}
+    .hero .hero-copy.hero-copy-1{margin-bottom:14px}
+    .hero .hero-focus{margin-bottom:22px}
+    @media(max-width:600px){.hero .hero-copy,.hero .hero-focus{font-size:16px;line-height:1.6}}
     .success .sx-street{margin:10px 0 0;font-weight:750;color:#173c76}
     @media(min-width:801px){.hero .hero-actions{display:flex}.hero .hero-actions .btn-main{display:none}.hero .hero-when{margin:0 0 18px}}
     .sx-qbox{margin:16px 0 0;padding:14px 15px;border:1px solid #e3ecf8;border-radius:12px;text-align:left;font-size:13.5px;line-height:1.5;color:#566d86}
@@ -525,7 +540,7 @@
         <div>
           <div class="eyebrow"><span class="pulse"></span><span>Live gratuit ce dimanche<span class="eb-sep"> </span><span class="eb-2">sur le business du nettoyage de toitures et façades</span></span></div>
           <h1 id="hero-title">Comment atteindre <em>10&nbsp;000&nbsp;€ par mois</em> en moins de 3 mois grâce au nettoyage extérieur&nbsp;?</h1>
-          <p class="hero-copy hero-copy-1">On est partis de zéro, chacun avec sa propre entreprise de nettoyage de toitures et façades, dans deux régions totalement différentes. Dès le 2ᵉ&nbsp;mois, on dépassait tous les deux 10&nbsp;000&nbsp;€ de chiffre d'affaires.</p>
+          <p class="hero-copy hero-copy-1">On n'y connaissait rien du tout. On est partis de zéro, chacun avec sa propre entreprise de nettoyage de toitures et façades, dans deux régions totalement différentes. Dès le 2ᵉ&nbsp;mois, chacun dépassait 10&nbsp;000&nbsp;€ de chiffre d'affaires.</p>
           <p class="hero-copy hero-focus">Ce n'est pas de la chance. C'est un système, le même pour nous deux, pour <strong>trouver des clients</strong> et <strong>vendre au bon prix</strong>. Dimanche, en direct, on te le montre étape par étape.</p>
           <div class="hero-actions"><a href="#inscription" class="btn-main">Je réserve ma place gratuite <span aria-hidden="true">→</span></a><p class="hero-when">Dernier live de l'année · <b>Dimanche 29&nbsp;novembre</b> · 20&nbsp;h&nbsp;·&nbsp;100&nbsp;%&nbsp;gratuit</p></div>
           <div class="hero-hosts">
@@ -595,7 +610,7 @@
           <div class="slot"><img src="images/chantier-2.jpg" onload="this.parentNode.classList.add('ok')" alt="Avant / après d'une façade nettoyée sur un de nos chantiers" loading="lazy" onerror="this.parentNode.classList.add('empty');this.remove()"><span class="ba-tag" aria-hidden="true">Façade</span><span class="slot-label">Avant / après&nbsp;: façade<br>(à fournir)</span></div>
           <div class="slot"><img src="images/chantier-3.jpg" onload="this.parentNode.classList.add('ok')" alt="Avant / après d'une toiture nettoyée sur un de nos chantiers" loading="lazy" onerror="this.parentNode.classList.add('empty');this.remove()"><span class="ba-tag" aria-hidden="true">Toiture</span><span class="slot-label">Avant / après&nbsp;: toiture 2<br>(à fournir)</span></div>
         </div>
-        <div class="site-case" id="site-case" aria-label="Un de nos chantiers, en chiffres"><span class="sc-title">Le calcul d'un vrai chantier</span><span>Toiture de <span class="fill">[surface réelle] m²</span></span><span><b>Facturé&nbsp;:</b> <span class="fill">[montant réel]</span></span><span><b>Produits&nbsp;:</b> − <span class="fill">[montant réel]</span></span><span><b>Temps passé&nbsp;:</b> <span class="fill">[durée réelle]</span></span><span class="sc-rest">Véhicule, assurance, cotisations&nbsp;: le calcul complet de ce qui te reste, en live.</span></div>
+        <div class="site-case" id="site-case" aria-label="Un vrai chantier, en chiffres"><span class="sc-title">Le calcul d'un vrai chantier</span><span>Nettoyage d'une façade</span><span><b>Facturé&nbsp;:</b> <strong class="sc-val">1&nbsp;790&nbsp;€</strong></span><span><b>Temps passé&nbsp;:</b> <strong class="sc-val">1&nbsp;journée</strong></span><span class="sc-link">C'est le chantier de l'avis de Stéphane&nbsp;B., plus bas.</span><span class="sc-rest">Produits, véhicule, assurance, cotisations&nbsp;: le calcul complet de ce qui te reste, en live.</span></div>
       </div>
     </section>
 
@@ -636,7 +651,7 @@
       <div class="container">
         <div class="section-head"><p class="kicker">La demande est réelle</p><h2 id="avis-title">Des propriétaires qui paient pour ce service, et qui le recommandent.</h2></div>
         <div class="reviews">
-          <article class="review"><div class="slot-text">Avis Google 1 (à fournir)</div><small>Avis Google</small></article>
+          <article class="review review-real"><div class="stars" aria-label="5 étoiles sur 5">★★★★★</div><blockquote>«&nbsp;Travail sérieux, prix compétitif, une équipe jeune et motivée. Je recommande.&nbsp;»</blockquote><div class="rv-photos"><figure><img src="images/avis-1-avant.jpg" alt="Façade avant nettoyage, photo du client" loading="lazy"><figcaption>Avant</figcaption></figure><figure><img src="images/avis-1-apres.jpg" alt="Façade après nettoyage, photo du client" loading="lazy"><figcaption>Après</figcaption></figure></div><p class="rv-deal">Chantier facturé <b>1&nbsp;790&nbsp;€</b>, réalisé en <b>1&nbsp;journée</b>.</p><small><b>Stéphane B.</b> · Local Guide · Avis Google · Façade</small></article>
           <article class="review"><div class="slot-text">Avis Google 2 (à fournir)</div><small>Avis Google</small></article>
           <article class="review"><div class="slot-text">Avis Google 3 (à fournir)</div><small>Avis Google</small></article>
         </div>
