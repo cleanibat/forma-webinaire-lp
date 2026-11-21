@@ -493,6 +493,9 @@
     .review-real b{color:#152640}
     .rv-deal{margin:0;font-size:13.5px;line-height:1.45;color:#2a4466;background:#f1f6fd;border:1px solid #d7e6fc;border-radius:10px;padding:8px 11px}
     .site-case .sc-val{color:#11274a;font-size:17px;font-weight:850;letter-spacing:-.01em}
+    .site-case .sc-proof{flex-basis:100%;margin:6px 0 0}
+    .site-case .sc-proof img{display:block;width:100%;max-width:340px;border:1px solid #dee7f2;border-radius:12px;box-shadow:0 8px 22px rgba(13,35,65,.08)}
+    .site-case .sc-proof figcaption{margin-top:6px;font-size:12px;color:#5f6f84}
     .site-case .sc-link{flex-basis:100%;font-size:13px;color:#566c88}
     .rv-photos{display:grid;grid-template-columns:1fr 1fr;gap:8px}
     .rv-photos figure{margin:0;position:relative;border-radius:10px;overflow:hidden;aspect-ratio:1}
@@ -610,7 +613,7 @@
           <div class="slot"><img src="images/chantier-2.jpg" onload="this.parentNode.classList.add('ok')" alt="Avant / après d'une façade nettoyée sur un de nos chantiers" loading="lazy" onerror="this.parentNode.classList.add('empty');this.remove()"><span class="ba-tag" aria-hidden="true">Façade</span><span class="slot-label">Avant / après&nbsp;: façade<br>(à fournir)</span></div>
           <div class="slot"><img src="images/chantier-3.jpg" onload="this.parentNode.classList.add('ok')" alt="Avant / après d'une toiture nettoyée sur un de nos chantiers" loading="lazy" onerror="this.parentNode.classList.add('empty');this.remove()"><span class="ba-tag" aria-hidden="true">Toiture</span><span class="slot-label">Avant / après&nbsp;: toiture 2<br>(à fournir)</span></div>
         </div>
-        <div class="site-case" id="site-case" aria-label="Un vrai chantier, en chiffres"><span class="sc-title">Le calcul d'un vrai chantier</span><span>Nettoyage d'une façade</span><span><b>Facturé&nbsp;:</b> <strong class="sc-val">1&nbsp;790&nbsp;€</strong></span><span><b>Temps passé&nbsp;:</b> <strong class="sc-val">1&nbsp;journée</strong></span><span class="sc-link">C'est le chantier de l'avis de Stéphane&nbsp;B., plus bas.</span><span class="sc-rest">Produits, véhicule, assurance, cotisations&nbsp;: le calcul complet de ce qui te reste, en live.</span></div>
+        <div class="site-case" id="site-case" aria-label="Un vrai chantier, en chiffres"><span class="sc-title">Le calcul d'un vrai chantier</span><span>Nettoyage d'une façade</span><span><b>Facturé&nbsp;:</b> <strong class="sc-val">1&nbsp;390&nbsp;€</strong></span><span><b>Temps passé&nbsp;:</b> <strong class="sc-val">1&nbsp;journée</strong></span><span class="sc-link">C'est le chantier de l'avis de Stéphane&nbsp;B., plus bas.</span><figure class="sc-proof"><a href="images/virement-chantier.jpg" target="_blank" rel="noopener" aria-label="Agrandir la preuve du virement"><img src="images/virement-chantier.jpg" alt="Virement de 1 390 € reçu le 28 avril 2026 pour ce chantier de façade, nom et coordonnées bancaires du client masqués" loading="lazy"></a><figcaption>Le virement reçu pour ce chantier, coordonnées du client masquées.</figcaption></figure><span class="sc-rest">Produits, véhicule, assurance, cotisations&nbsp;: le calcul complet de ce qui te reste, en live.</span></div>
       </div>
     </section>
 
@@ -651,7 +654,7 @@
       <div class="container">
         <div class="section-head"><p class="kicker">La demande est réelle</p><h2 id="avis-title">Des propriétaires qui paient pour ce service, et qui le recommandent.</h2></div>
         <div class="reviews">
-          <article class="review review-real"><div class="stars" aria-label="5 étoiles sur 5">★★★★★</div><blockquote>«&nbsp;Travail sérieux, prix compétitif, une équipe jeune et motivée. Je recommande.&nbsp;»</blockquote><div class="rv-photos"><figure><img src="images/avis-1-avant.jpg" alt="Façade avant nettoyage, photo du client" loading="lazy"><figcaption>Avant</figcaption></figure><figure><img src="images/avis-1-apres.jpg" alt="Façade après nettoyage, photo du client" loading="lazy"><figcaption>Après</figcaption></figure></div><p class="rv-deal">Chantier facturé <b>1&nbsp;790&nbsp;€</b>, réalisé en <b>1&nbsp;journée</b>.</p><small><b>Stéphane B.</b> · Local Guide · Avis Google · Façade</small></article>
+          <article class="review review-real"><div class="stars" aria-label="5 étoiles sur 5">★★★★★</div><blockquote>«&nbsp;Travail sérieux, prix compétitif, une équipe jeune et motivée. Je recommande.&nbsp;»</blockquote><div class="rv-photos"><figure><img src="images/avis-1-avant.jpg" alt="Façade avant nettoyage, photo du client" loading="lazy"><figcaption>Avant</figcaption></figure><figure><img src="images/avis-1-apres.jpg" alt="Façade après nettoyage, photo du client" loading="lazy"><figcaption>Après</figcaption></figure></div><p class="rv-deal">Chantier facturé <b>1&nbsp;390&nbsp;€</b>, réalisé en <b>1&nbsp;journée</b>.</p><small><b>Stéphane B.</b> · Local Guide · Avis Google · Façade</small></article>
           <article class="review"><div class="slot-text">Avis Google 2 (à fournir)</div><small>Avis Google</small></article>
           <article class="review"><div class="slot-text">Avis Google 3 (à fournir)</div><small>Avis Google</small></article>
         </div>
@@ -709,7 +712,7 @@
     const sc=$('site-case');if(sc&&sc.textContent.includes('[')&&/^https?:$/.test(location.protocol)) sc.remove();
     // Captures Qonto : agrandies dans la page au clic ou au toucher
     const zp=$('zoom-pop'),zi=$('zoom-img'),closeZoom=()=>{try{zp.close()}catch(e){zp.removeAttribute('open')}};
-    document.querySelectorAll('.proofs .shot a').forEach(a=>a.addEventListener('click',e=>{if(!zp.showModal)return;e.preventDefault();const im=a.querySelector('img');zi.src=a.href;zi.alt=im?im.alt:'';zp.showModal();}));
+    document.querySelectorAll('.proofs .shot a, .sc-proof a').forEach(a=>a.addEventListener('click',e=>{if(!zp.showModal)return;e.preventDefault();const im=a.querySelector('img');zi.src=a.href;zi.alt=im?im.alt:'';zp.showModal();}));
     zp.addEventListener('click',closeZoom);
     // Écran merci : 5 questions en un clic (profil, blocage, horizon, budget, présence), ajoutées à l'inscription. En production : les envoyer au CRM avec l'e-mail comme clé.
     let lastIdx=-1;
