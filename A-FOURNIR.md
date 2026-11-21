@@ -10,7 +10,6 @@ Tant qu'un fichier manque, la page affiche un emplacement en pointillés.
 | `images/duo-animateurs.jpg` | Bloc « Qui sont Aymeric & Marius ? » | FAIT : vos deux portraits côte à côte. À remplacer par une photo de vous deux sur chantier si vous en avez une |
 | `videos/presentation.mp4` | Bloc « Qui sont Aymeric & Marius ? » | 30 à 45 s face caméra sur chantier, format 4:5 : qui vous êtes, vos débuts, pourquoi ce live. Seuls chiffres : le million à deux, 10 000 € dès le 2e mois. **Rien sur ce qui sera vendu.** |
 | `images/qonto-2.jpg` | Section « Nos chiffres, sans filtre » | Captures Qonto, **noms de clients, IBAN et soldes perso masqués**, format vertical. **Entourer en rouge le total du mois et la période.** Marius, 2e mois (la preuve 1 d'Aymeric est en place : courbe Qonto janv.–mars 2025) |
-| `images/chantier-1.jpg` à `chantier-3.jpg` | Galerie avant / après sous le bloc animateurs | 1 : avant / après toiture · 2 : avant / après façade · 3 : avant / après toiture 2 (photos montées côte à côte), sans adresse ni plaque visible |
 | `videos/confirmation.mp4` | Écran après inscription | Vidéo verticale 60 à 90 s (voir `script-video-confirmation.md`) |
 
 ## À me donner en texte
