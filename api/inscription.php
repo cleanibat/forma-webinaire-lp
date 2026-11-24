@@ -43,7 +43,7 @@ $email = mb_strtolower($clean($in['email'] ?? '', 180));
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) out(false, ['error' => 'email'], 422);
 
 $phone = preg_replace('/[^\d+]/', '', $clean($in['phone'] ?? '', 30)) ?? '';
-if (str_starts_with($phone, '00')) $phone = '+' . substr($phone, 2);
+if (strncmp($phone, '00', 2) === 0) $phone = '+' . substr($phone, 2);
 if (preg_match('/^0[1-9]\d{8}$/', $phone)) $phone = '+33' . substr($phone, 1);
 
 $data = [
