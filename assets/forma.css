@@ -613,3 +613,51 @@ footer .brand-txt{font-size:17px}
 footer .cs-logo{font-size:24px}
 @media(max-width:600px){.cs-logo{font-size:23px}}
 @media(max-width:360px){.cs-logo{font-size:21px}}
+
+/* ───── Retours du call Aymeric × Marius (24/11/2026) ───── */
+/* Pastille du hero : « LIVE · Ce dimanche à 20 h » */
+.hero .eyebrow.eb-live{gap:10px;padding:5px 15px 5px 5px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);color:#fff;box-shadow:none;font-size:13px;letter-spacing:.02em;text-transform:none;font-weight:750;white-space:nowrap;align-items:center}
+.eb-live .eb-tag{display:inline-flex;align-items:center;gap:7px;background:#e63946;color:#fff;border-radius:99px;padding:5px 11px 5px 9px;font-size:11px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
+.hero .eyebrow.eb-live .pulse{width:7px;height:7px;margin:0;background:#fff;box-shadow:0 0 0 0 rgba(255,255,255,.6);animation:pulse-white 1.6s ease-out infinite}
+@keyframes pulse-white{0%{box-shadow:0 0 0 0 rgba(255,255,255,.55)}80%,100%{box-shadow:0 0 0 7px rgba(255,255,255,0)}}
+@media(max-width:600px){.hero .eyebrow.eb-live{font-size:12.5px;padding:4px 13px 4px 4px;letter-spacing:.01em}.eb-live .eb-tag{font-size:10px;padding:4px 9px 4px 8px}.hero .eyebrow.eb-live .pulse{margin:0}}
+@media(prefers-reduced-motion:reduce){.hero .eyebrow.eb-live .pulse{animation:none}}
+/* « + d'1 million d'euros » mis en avant comme le chiffre du titre */
+.hero-hosts .million strong{font-size:1.22em;font-weight:900;letter-spacing:-.02em;color:#81b1ff;background:linear-gradient(transparent 68%,rgba(37,99,235,.5) 68% 92%,transparent 92%);padding:0 .05em;white-space:nowrap}
+/* Cases de consentement courtes */
+.consents .check i{font-style:normal;font-weight:700;color:#8193aa}
+.small-note a{color:#3a6fc0;text-decoration:underline;text-underline-offset:2px}
+/* Pour qui : bulle qui désamorce l'objection */
+.who-grid .bubble{grid-column:1/-1;position:relative;margin:4px 0 0;padding:10px 14px;background:#eef5ff;border:1px solid #d3e4fd;border-radius:12px;font-size:14px;line-height:1.45;font-weight:750;color:#1d4f9c}
+.who-grid .bubble:before{content:"";position:absolute;top:-7px;left:22px;width:12px;height:12px;background:#eef5ff;border-left:1px solid #d3e4fd;border-top:1px solid #d3e4fd;transform:rotate(45deg)}
+@media(max-width:600px){.who-grid .value-card{padding:20px 18px;row-gap:10px}.who-grid .value-card p{font-size:15px}.who-grid .bubble{font-size:13.5px;padding:9px 12px}.who-or{padding:4px 10px;font-size:12px}}
+/* Qui sommes-nous */
+.founder .founder-sub{margin:-8px 0 18px;font-size:18px;font-weight:750;color:#2563eb}
+.founder ul.ticks-row{display:flex;flex-wrap:wrap;gap:10px 26px}
+.founder ul.ticks-row li{margin:0}
+/* Clôture : pas des coachs de coachs */
+.closing .closing-copy{font-size:18px;color:#d2deee;max-width:640px}
+.closing-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;max-width:600px;margin:6px auto 30px}
+.closing-stats div{background:rgba(255,255,255,.06);border:1px solid rgba(129,177,255,.25);border-radius:16px;padding:20px 14px}
+.closing-stats strong{display:block;font-size:34px;font-weight:900;letter-spacing:-.04em;color:#81b1ff;line-height:1.05}
+.closing-stats span{display:block;margin-top:8px;font-size:14px;line-height:1.4;color:#c6d6e9}
+.closing .cta-punch{font-weight:800;color:#fff}
+@media(max-width:600px){.closing-stats{grid-template-columns:1fr;gap:10px}.closing-stats div{display:flex;align-items:baseline;gap:12px;text-align:left;padding:14px 16px}.closing-stats strong{font-size:25px;flex:0 0 auto;white-space:nowrap}.closing-stats span{margin:0;font-size:13.5px}.closing .closing-copy{font-size:16px}}
+.who-grid .value-card{grid-template-rows:auto 1fr auto}.who-grid .bubble{align-self:end}
+.closing-stats strong{white-space:nowrap}
+.check .req,.small-note .req{color:#d62828;font-weight:900;margin-left:2px}
+/* Page merci : barre de progression 90 % → 100 % */
+.sx-progress{margin:0 0 18px;padding:14px 16px;background:#f3f8ff;border:1px solid #d6e5fb;border-radius:14px}
+.sx-progress-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:9px;font-size:13.5px}
+.sx-progress-top b{color:#11274a;font-weight:850}
+.sx-progress-top span{color:#2563eb;font-weight:750;font-size:12.5px;white-space:nowrap}
+.sx-progress .sx-bar{height:12px;background:#dbe7f8}
+.sx-progress .sx-bar span{background:linear-gradient(90deg,#2563eb,#4b92ff);transition:width .6s ease;position:relative;overflow:hidden}
+.sx-progress .sx-bar span:after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(45deg,rgba(255,255,255,.18) 0 10px,transparent 10px 20px);animation:sx-stripes 1.2s linear infinite}
+@keyframes sx-stripes{to{background-position:28px 0}}
+.sx-progress.full{background:#effaf3;border-color:#c7ebd3}
+.sx-progress.full .sx-bar span{background:#15803d}
+.sx-progress.full .sx-progress-top b,.sx-progress.full .sx-progress-top span{color:#15803d}
+.sx-steps li.is-done:before{content:"✓";background:#15803d}
+@media(prefers-reduced-motion:reduce){.sx-progress .sx-bar span:after{animation:none}}
+.sx-progress-top b{white-space:nowrap}

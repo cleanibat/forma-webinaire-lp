@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..900&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/forma.css?v=5">
+  <link rel="stylesheet" href="assets/forma.css?v=7">
 </head>
 <body data-forma-variant="marine">
   <header>
@@ -22,17 +22,23 @@
     <div class="container">
       <div class="simple-card">
             <div id="signup-success" class="success">
-              <h1 class="merci-title" style="font-size:clamp(25px,6vw,32px);letter-spacing:-.03em;line-height:1.15;margin:0 0 8px;color:#11274a">C'est noté<span id="success-name"></span>&nbsp;! Ta place est gardée.</h1>
-              <p style="margin:0 0 20px">Dimanche 29 novembre 2026 à 20&nbsp;h (heure de Paris), en direct. Prévois 1&nbsp;h&nbsp;30 à 2&nbsp;h, et de quoi prendre des notes.</p>
+              <div class="sx-progress" id="sx-progress" role="status" aria-live="polite">
+                <div class="sx-progress-top"><b id="sx-pct-txt">90&nbsp;% complété</b><span id="sx-pct-left">Encore 1 étape</span></div>
+                <div class="sx-bar"><span id="sx-bar" style="width:90%"></span></div>
+              </div>
+              <h1 class="merci-title" style="font-size:clamp(25px,6vw,32px);letter-spacing:-.03em;line-height:1.15;margin:0 0 8px;color:#11274a">Presque fini<span id="success-name"></span>&nbsp;! Ne quitte pas cette page.</h1>
+              <p style="margin:0 0 20px">Ta place pour dimanche 29 novembre à 20&nbsp;h est réservée. Termine les étapes ci-dessous pour être sûr de ne pas rater le live.</p>
               <ol class="sx-steps">
-                <li><div><b>Rejoins le groupe WhatsApp du live</b> avant de fermer cette page. Tu y reçois le rappel à 19&nbsp;h&nbsp;45, même si notre e-mail tombe dans les spams.<a class="btn-wa" id="whatsapp-link" href="#" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.1-.3.3-.1.6.1.3.6 1.1 1.4 1.8 1 .9 1.8 1.1 2.1 1.3.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.4Z"/></svg> Rejoindre le groupe WhatsApp</a></div></li>
-                <li><div><b>Ajoute le live à ton agenda</b> et mets une alarme dimanche à 19&nbsp;h&nbsp;45.<div class="sx-cal"><a class="btn-ghost" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Le%20Live%20Nettoyage%20Ext%C3%A9rieur%20%C2%B7%20Toitures%20et%20fa%C3%A7ades&amp;dates=20261129T190000Z/20261129T210000Z&amp;ctz=Europe/Paris&amp;details=Le%20lien%20du%20live%20t%27est%20envoy%C3%A9%20par%20e-mail%20et%20par%20SMS%20ou%20WhatsApp.">Google Agenda</a><a class="btn-ghost" id="ics-link" href="#" download="live-nettoyage-exterieur-29-novembre.ics">Apple / Outlook</a></div></div></li>
-                <li><div><b>Ouvre l'e-mail avec ton lien personnel.</b> Il arrive dans quelques minutes. C'est ce lien qui t'ouvre la salle dimanche&nbsp;: garde-le. Rien à installer, la salle s'ouvre dans ton navigateur. Pas reçu&nbsp;? Regarde dans les spams ou l'onglet Promotions, et déplace-le dans ta boîte principale.</div></li>
+                <li id="step-wa"><div><b>Rejoins le groupe WhatsApp du live</b> avant de fermer cette page. Tu y reçois le rappel à 19&nbsp;h&nbsp;45, même si notre e-mail tombe dans les spams.<a class="btn-wa" id="whatsapp-link" href="#" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.1-.3.3-.1.6.1.3.6 1.1 1.4 1.8 1 .9 1.8 1.1 2.1 1.3.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.4Z"/></svg> Rejoindre le groupe WhatsApp</a></div></li>
+                <li id="step-cal"><div><b>Ajoute le live à ton agenda</b> et mets une alarme dimanche à 19&nbsp;h&nbsp;45.<div class="sx-cal"><a class="btn-ghost" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Le%20Live%20Nettoyage%20Ext%C3%A9rieur%20%C2%B7%20Toitures%20et%20fa%C3%A7ades&amp;dates=20261129T190000Z/20261129T210000Z&amp;ctz=Europe/Paris&amp;details=Le%20lien%20du%20live%20t%27est%20envoy%C3%A9%20par%20e-mail%20et%20par%20SMS%20ou%20WhatsApp.">Google Agenda</a><a class="btn-ghost" id="ics-link" href="#" download="live-nettoyage-exterieur-29-novembre.ics">Apple / Outlook</a></div></div></li>
+                <li id="step-mail"><div><b>Ouvre l'e-mail avec ton lien personnel.</b> Il arrive dans quelques minutes. C'est ce lien qui t'ouvre la salle dimanche&nbsp;: garde-le. Rien à installer, la salle s'ouvre dans ton navigateur. Pas reçu&nbsp;? Regarde dans les spams ou l'onglet Promotions, et déplace-le dans ta boîte principale.</div></li>
               </ol>
+              <!-- Vidéo de Marius : à remettre plus tard
               <p class="sx-vtitle">Le message de Marius avant dimanche</p>
               <div class="slot video"><video src="videos/confirmation.mp4" controls playsinline preload="metadata" onerror="this.parentNode.classList.add('empty');this.remove()"></video><span class="slot-label" aria-hidden="true">Vidéo de Marius<br>(à tourner)</span></div>
+              -->
               <div class="sx-take"><p class="sx-surprise"><span aria-hidden="true">★</span> Bloque ta soirée jusqu'au bout&nbsp;: la surprise est réservée à ceux qui seront là en direct.</p></div>
-              <div class="sx-qbox"><div class="sx-quiz" id="sx-quiz"><div class="sxq" data-q="presence"><b>Dimanche 20&nbsp;h, c'est bloqué pour toi&nbsp;?</b><div class="sx-chips"><button type="button" data-v="oui">Oui, je serai là</button><button type="button" data-v="organiser">Je vais m'organiser</button></div></div><div class="sxq" data-q="profil" hidden><b>Pour qu'on prépare le live&nbsp;: tu es plutôt…</b><div class="sx-chips"><button type="button" data-v="debutant">Je pars de zéro</button><button type="button" data-v="artisan">Déjà artisan</button><button type="button" data-v="nettoyage">Déjà dans le nettoyage</button></div></div><div class="sxq" data-q="blocage" hidden><b>Ton plus gros blocage aujourd'hui&nbsp;?</b><div class="sx-chips"><button type="button" data-v="clients">Trouver des clients</button><button type="button" data-v="prix">Fixer mes prix</button><button type="button" data-v="materiel">Le matériel pour démarrer</button></div></div><div class="sxq" data-q="horizon" hidden><b>Et tu voudrais te lancer…</b><div class="sx-chips"><button type="button" data-v="janvier">Dès janvier</button><button type="button" data-v="6mois">Dans les 6 prochains mois</button><button type="button" data-v="renseigne">Je me renseigne</button></div></div><div class="sxq" data-q="budget" hidden><b>Pour démarrer (matériel, produits, véhicule), tu as prévu…</b><div class="sx-chips"><button type="button" data-v="dedie">Un budget dédié</button><button type="button" data-v="petit">Un petit budget</button><button type="button" data-v="rien">Rien pour l'instant</button></div></div><p class="sx-noted" hidden><b>Noté, merci.</b> <span id="sx-noted-txt">On en parle dimanche en direct.</span></p></div></div>
+              <div class="sx-qbox"><div class="sx-quiz" id="sx-quiz"><div class="sxq" data-q="presence"><b>Dimanche 20&nbsp;h, c'est bloqué pour toi&nbsp;?</b><div class="sx-chips"><button type="button" data-v="oui">Oui, je serai là</button><button type="button" data-v="organiser">Je vais m'organiser</button></div></div><div class="sxq" data-q="profil" hidden><b>Pour qu'on prépare le live&nbsp;: tu es plutôt…</b><div class="sx-chips"><button type="button" data-v="debutant">Je pars de zéro</button><button type="button" data-v="artisan">Déjà artisan</button><button type="button" data-v="nettoyage">Déjà dans le nettoyage</button></div></div><div class="sxq" data-q="blocage" hidden><b>Ton plus gros blocage aujourd'hui&nbsp;?</b><div class="sx-chips"><button type="button" data-v="clients">Trouver des clients</button><button type="button" data-v="prix">Fixer mes prix</button><button type="button" data-v="materiel">Le matériel pour démarrer</button></div></div><div class="sxq" data-q="horizon" hidden><b>Et tu voudrais te lancer…</b><div class="sx-chips"><button type="button" data-v="janvier">Dès janvier</button><button type="button" data-v="6mois">Dans les 6 prochains mois</button><button type="button" data-v="renseigne">Je me renseigne</button></div></div><div class="sxq" data-q="budget" hidden><b>Pour démarrer (matériel, produits), tu as prévu…</b><div class="sx-chips"><button type="button" data-v="dedie">Un budget dédié</button><button type="button" data-v="petit">Un petit budget</button><button type="button" data-v="rien">Rien pour l'instant</button></div></div><p class="sx-noted" hidden><b>Noté, merci.</b> <span id="sx-noted-txt">On en parle dimanche en direct.</span></p></div></div>
               <p class="sx-noreplay"><b>Et si je ne peux pas être là&nbsp;?</b> Il n'y aura pas de replay. Si tu as un empêchement, connecte-toi même en retard&nbsp;: la salle reste ouverte jusqu'à la fin.</p>
               <div class="sx-share"><p>Tu connais quelqu'un qui veut changer de métier, ou un artisan qui veut plus de chantiers&nbsp;?</p><a class="btn-ghost" id="share-link" href="#" target="_blank" rel="noopener">Lui envoyer le lien</a></div>
             </div>
@@ -40,7 +46,7 @@
     </div>
   </main>
   <footer><div class="container"><div class="footer-note">© 2026 CleanScale · Le Live Nettoyage Extérieur.<div class="footer-links"><a href="mentions-legales.html">Mentions légales</a><a href="confidentialite.html">Confidentialité</a><button type="button" data-ck-open>Gérer les cookies</button></div></div></div></footer>
-  <script src="assets/config.js?v=2"></script>
+  <script src="assets/config.js?v=3"></script>
   <script src="assets/commun.js?v=2"></script>
   <script>
   (()=>{
@@ -66,10 +72,22 @@
       if(email) F.send('quiz',{email,question:q.dataset.q,reponse:b.dataset.v},{keepalive:true});
       const next=q.nextElementSibling;
       if(next&&next.classList.contains('sxq')){q.hidden=true;next.hidden=false;next.querySelector('button').focus();}
-      else{q.hidden=true;const n=quiz.querySelector('.sx-noted'),bl=(quiz.querySelector('[data-q=blocage] [aria-pressed=true]')||{}).dataset;const part={clients:'Le client qui te cherche déjà',prix:'Annoncer ton prix sans trembler',materiel:'Démarrer sans acheter pour rien'}[bl&&bl.v];$('sx-noted-txt').textContent=part?'Dimanche, la partie « '+part+' » est pour toi : garde de quoi noter.':'On en parle dimanche en direct.';n.hidden=false;}
+      else{q.hidden=true;const n=quiz.querySelector('.sx-noted'),bl=(quiz.querySelector('[data-q=blocage] [aria-pressed=true]')||{}).dataset;const part={clients:'Comment trouver tes clients',prix:'Pourquoi ce métier rapporte autant',materiel:'Comment on fait le travail'}[bl&&bl.v];$('sx-noted-txt').textContent=part?'Dimanche, la partie « '+part+' » est pour toi : garde de quoi noter.':'On en parle dimanche en direct.';n.hidden=false;}
     });
+    // Barre de progression : 90 % à l'arrivée, +5 % par étape (WhatsApp, agenda). « Encore 1 étape » tant que les deux ne sont pas faites.
+    const done=new Set((F.store.get('forma_steps',true)||'').split(',').filter(Boolean));
+    const paint=()=>{const n=['wa','cal'].filter(s=>done.has(s)).length,full=n===2,pct=90+5*n;
+      $('sx-bar').style.width=pct+'%';
+      $('sx-pct-txt').textContent=full?'100\u00a0% complété ✓':pct+'\u00a0% complété';
+      $('sx-pct-left').textContent=full?'Prêt pour dimanche':'Encore 1 étape';
+      $('sx-progress').classList.toggle('full',full);
+      ['wa','cal'].forEach(s=>$('step-'+s).classList.toggle('is-done',done.has(s)));};
+    const mark=s=>{done.add(s);F.store.set('forma_steps',[...done].join(','),true);paint();};
+    wa.addEventListener('click',()=>mark('wa'));
+    document.querySelectorAll('#step-cal a').forEach(a=>a.addEventListener('click',()=>mark('cal')));
+    paint();
     // Inviter un proche : lien vers la landing (sans paramètres de suivi)
-    $('share-link').href='https://wa.me/?text='+encodeURIComponent('Live gratuit dimanche 29 novembre à 20 h sur le business du nettoyage de toitures et façades : '+new URL('./',location.href).href);
+    $('share-link').href='https://wa.me/?text='+encodeURIComponent('Live offert dimanche 29 novembre à 20 h sur le nettoyage extérieur : '+new URL('./',location.href).href);
   })();
   </script>
 </body>

@@ -9,5 +9,5 @@ window.FORMA_CONFIG = {
   WHATSAPP_URL: 'https://chat.whatsapp.com/CKqmeaBs4MM5EXpwpUhDx0',
   LIEN_RDV: '',                             // page de réservation d'appel avec Marius (après le live)                         // lien d'invitation de la Communauté WhatsApp du live
   LIVE_UTC: Date.UTC(2026, 10, 29, 19, 0, 0), // dimanche 29/11/2026 20 h, heure de Paris
-  CONSENT_VERSION: 'consent-v4-2026-11-24'  // à changer si le texte des cases change
+  CONSENT_VERSION: 'consent-v7-2026-11-24'  // à changer si le texte des cases change
 };
