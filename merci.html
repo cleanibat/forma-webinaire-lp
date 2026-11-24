@@ -46,8 +46,8 @@
     </div>
   </main>
   <footer><div class="container"><div class="footer-note">© 2026 CleanScale · Le Live Nettoyage Extérieur.<div class="footer-links"><a href="mentions-legales.html">Mentions légales</a><a href="confidentialite.html">Confidentialité</a><button type="button" data-ck-open>Gérer les cookies</button></div></div></div></footer>
-  <script src="assets/config.js?v=3"></script>
-  <script src="assets/commun.js?v=2"></script>
+  <script src="assets/config.js?v=4"></script>
+  <script src="assets/commun.js?v=3"></script>
   <script>
   (()=>{
     const C=window.FORMA_CONFIG||{},F=window.FORMA,P=F.params||{},$=id=>document.getElementById(id);
@@ -70,9 +70,10 @@
     quiz.addEventListener('click',e=>{const b=e.target.closest('button[data-v]');if(!b)return;const q=b.closest('.sxq');
       q.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'));
       if(email) F.send('quiz',{email,question:q.dataset.q,reponse:b.dataset.v},{keepalive:true});
+      F.once('Quiz_'+q.dataset.q,{reponse:b.dataset.v});
       const next=q.nextElementSibling;
       if(next&&next.classList.contains('sxq')){q.hidden=true;next.hidden=false;next.querySelector('button').focus();}
-      else{q.hidden=true;const n=quiz.querySelector('.sx-noted'),bl=(quiz.querySelector('[data-q=blocage] [aria-pressed=true]')||{}).dataset;const part={clients:'Comment trouver tes clients',prix:'Pourquoi ce métier rapporte autant',materiel:'Comment on fait le travail'}[bl&&bl.v];$('sx-noted-txt').textContent=part?'Dimanche, la partie « '+part+' » est pour toi : garde de quoi noter.':'On en parle dimanche en direct.';n.hidden=false;}
+      else{q.hidden=true;F.once('QuizCompleted',{});const n=quiz.querySelector('.sx-noted'),bl=(quiz.querySelector('[data-q=blocage] [aria-pressed=true]')||{}).dataset;const part={clients:'Comment trouver tes clients',prix:'Pourquoi ce métier rapporte autant',materiel:'Comment on fait le travail'}[bl&&bl.v];$('sx-noted-txt').textContent=part?'Dimanche, la partie « '+part+' » est pour toi : garde de quoi noter.':'On en parle dimanche en direct.';n.hidden=false;}
     });
     // Barre de progression : 90 % à l'arrivée, +5 % par étape (WhatsApp, agenda). « Encore 1 étape » tant que les deux ne sont pas faites.
     const done=new Set((F.store.get('forma_steps',true)||'').split(',').filter(Boolean));
@@ -83,8 +84,8 @@
       $('sx-progress').classList.toggle('full',full);
       ['wa','cal'].forEach(s=>$('step-'+s).classList.toggle('is-done',done.has(s)));};
     const mark=s=>{done.add(s);F.store.set('forma_steps',[...done].join(','),true);paint();};
-    wa.addEventListener('click',()=>mark('wa'));
-    document.querySelectorAll('#step-cal a').forEach(a=>a.addEventListener('click',()=>mark('cal')));
+    wa.addEventListener('click',()=>{mark('wa');F.once('JoinWhatsApp',{content_name:'Groupe WhatsApp du live'});});
+    document.querySelectorAll('#step-cal a').forEach(a=>a.addEventListener('click',()=>{mark('cal');F.once('AddToCalendar',{content_name:a.id==='ics-link'?'Apple / Outlook':'Google Agenda'});}));
     paint();
     // Inviter un proche : lien vers la landing (sans paramètres de suivi)
     $('share-link').href='https://wa.me/?text='+encodeURIComponent('Live offert dimanche 29 novembre à 20 h sur le nettoyage extérieur : '+new URL('./',location.href).href);

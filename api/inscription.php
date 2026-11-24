@@ -119,6 +119,40 @@ if (!empty($cfg['MAKE_WEBHOOK'])) {
   }
 }
 
+/* 3. API Conversions Meta (côté serveur), seulement avec l'accord cookies de la personne.
+   Même event_id que le Pixel du navigateur : Meta ne compte l'inscription qu'une fois. */
+$events = ['inscription' => 'Lead', 'candidature' => 'SubmitApplication'];
+if (isset($events[$type]) && (int)($in['ck'] ?? 0) === 1 && !empty($cfg['META_PIXEL_ID']) && !empty($cfg['META_CAPI_TOKEN'])) {
+  $h = static function (string $v): string { return $v === '' ? '' : hash('sha256', $v); };
+  $ud = array_filter([
+    'em' => [$h($email)],
+    'ph' => $phone !== '' ? [$h(ltrim($phone, '+'))] : null,
+    'fn' => !empty($data['prenom']) ? [$h(mb_strtolower(trim((string)$data['prenom'])))] : null,
+    'country' => [$h('fr')],
+    'external_id' => [$h($email)],
+    'client_ip_address' => $_SERVER['REMOTE_ADDR'] ?? null,
+    'client_user_agent' => $_SERVER['HTTP_USER_AGENT'] ?? null,
+    'fbp' => $clean($in['fbp'] ?? '', 200) ?: null,
+    'fbc' => $clean($in['fbc'] ?? '', 300) ?: null,
+  ]);
+  $ev = [
+    'event_name' => $events[$type],
+    'event_time' => time(),
+    'action_source' => 'website',
+    'event_source_url' => $clean($in['url'] ?? '', 300),
+    'user_data' => $ud,
+    'custom_data' => ['content_name' => 'Live 29 novembre', 'content_category' => $type],
+  ];
+  $eid = $clean($in['event_id'] ?? '', 80);
+  if ($eid !== '') $ev['event_id'] = $eid;
+  $payload = ['data' => [$ev], 'access_token' => $cfg['META_CAPI_TOKEN']];
+  if (!empty($cfg['META_TEST_CODE'])) $payload['test_event_code'] = $cfg['META_TEST_CODE'];
+  $ch = curl_init('https://graph.facebook.com/' . ($cfg['META_API_VERSION'] ?? 'v24.0') . '/' . $cfg['META_PIXEL_ID'] . '/events');
+  curl_setopt_array($ch, [CURLOPT_POST => true, CURLOPT_POSTFIELDS => json_encode($payload), CURLOPT_HTTPHEADER => ['Content-Type: application/json'], CURLOPT_RETURNTRANSFER => true, CURLOPT_TIMEOUT => 5]);
+  $mr = curl_exec($ch); $mc = (int)curl_getinfo($ch, CURLINFO_RESPONSE_CODE); curl_close($ch);
+  if ($mc < 200 || $mc >= 300) @file_put_contents($dir . '/meta-erreurs.log', date('c') . " $type $mc " . substr((string)$mr, 0, 300) . "\n", FILE_APPEND | LOCK_EX);
+}
+
 /* La personne passe à la suite si l'inscription est gardée quelque part */
 if ($sent || $saved) out(true);
 out(false, ['error' => 'stockage'], 502);

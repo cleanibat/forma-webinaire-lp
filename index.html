@@ -130,8 +130,8 @@
   <dialog class="zoom-pop" id="zoom-pop" aria-label="Capture agrandie"><img id="zoom-img" alt=""><button type="button" class="zp-close" id="zoom-close">Fermer ✕</button></dialog>
   <div class="mobile-cta hide"><a href="#inscription" class="btn-main">Je réserve ma place <span aria-hidden="true">→</span></a></div>
   <dialog class="exit-pop" id="exit-pop" aria-labelledby="exit-title"><div class="ep-in"><h2 id="exit-title">Attends.</h2><p>Pas de replay&nbsp;: c'est en direct, dimanche à 20&nbsp;h, ou jamais. Et une surprise attend ceux qui seront là.</p><p class="ep-when"><b>Dimanche 29 novembre · 20&nbsp;h (heure de Paris) · En ligne</b><br>De zéro à tes premiers chantiers.</p><a href="#inscription" class="btn-main" id="exit-go">Je réserve ma place <span aria-hidden="true">→</span></a><button type="button" class="ep-close" id="exit-close">Fermer</button></div></dialog>
-  <script src="assets/config.js?v=3"></script>
-  <script src="assets/commun.js?v=2"></script>
+  <script src="assets/config.js?v=4"></script>
+  <script src="assets/commun.js?v=3"></script>
   <script>
   (()=>{
     const C=window.FORMA_CONFIG||{},F=window.FORMA;
@@ -173,6 +173,9 @@
     $('exit-close').addEventListener('click',closePop);
     $('exit-go').addEventListener('click',closePop);
     pop.addEventListener('click',e=>{if(e.target===pop)closePop();});
+    // Suivi Meta : ouverture de la page d'inscription, puis premier champ touché
+    if(!liveOver) F.track('ViewContent',{content_name:'Landing live',content_category:'inscription'});
+    form.addEventListener('focusin',()=>F.once('FormStart',{content_name:'Landing live'}),{once:true});
     // Inscription : notre formulaire → api/inscription.php → Make (CRM + WebinarJam), puis page /merci
     const btn=form.querySelector('.form-submit'),btnHtml=btn.innerHTML;
     form.addEventListener('submit',e=>{
@@ -191,7 +194,7 @@
       btn.disabled=true;btn.textContent='Inscription en cours…';
       const data=Object.assign({firstName,email,phone,
         offres_ok:'oui',appel_ok:'non',
-        consent_version:C.CONSENT_VERSION||'',consent_at:new Date().toISOString(),website:''},F.utm());
+        consent_version:C.CONSENT_VERSION||'',consent_at:new Date().toISOString(),website:'',event_id:F.leadId()},F.utm());
       F.send('inscription',data).then(r=>{
         if(!r||!r.ok){btn.disabled=false;btn.innerHTML=btnHtml;return fail("L'inscription n'est pas passée. Vérifie ta connexion et réessaie dans un instant.");}
         F.store.set('forma_prenom',firstName,true);F.store.set('forma_email',email,true);

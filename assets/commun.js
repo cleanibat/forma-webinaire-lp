@@ -1,8 +1,9 @@
 /* FORMA : code commun à toutes les pages.
    - bandeau cookies (Accepter / Refuser au même niveau, choix gardé 6 mois)
    - Pixel Meta chargé UNIQUEMENT après « Accepter », et seulement si PIXEL_ID est renseigné
-   - FORMA.lead() : événement Lead une seule fois par inscription
-   - FORMA.send() : envoi au script serveur (api/inscription.php) */
+   - FORMA.lead() : événement Lead une seule fois par inscription (même event_id côté serveur → pas de doublon)
+   - FORMA.track() : autres événements (ViewContent, FormStart, JoinWhatsApp…), mis en file tant que le Pixel n'est pas autorisé
+   - FORMA.send() : envoi au script serveur (api/inscription.php), avec l'accord cookies et les identifiants Meta (fbp/fbc) */
 (function () {
   var C = window.FORMA_CONFIG || {};
   /* Paramètres de l'URL lus une fois, puis les données personnelles (prénom, e-mail…) sont retirées de l'adresse
@@ -38,13 +39,32 @@
     window.fbq('init', C.PIXEL_ID);
     window.fbq('track', 'PageView');
     flushLead();
+    queue.splice(0).forEach(function (a) { fire(a[0], a[1], a[2]); });
   }
+
+  /* Événements : standard (fbq track) ou personnalisés (trackCustom). Gardés en file si le Pixel n'est pas encore chargé. */
+  var STD = /^(PageView|ViewContent|Lead|CompleteRegistration|Contact|Schedule|SubmitApplication|Purchase|InitiateCheckout|Search|FindLocation|StartTrial|Subscribe)$/;
+  var queue = [];
+  function fire(name, params, id) {
+    window.fbq(STD.test(name) ? 'track' : 'trackCustom', name, params || {}, id ? { eventID: id } : undefined);
+  }
+  function track(name, params, id) {
+    if (pixelOn) fire(name, params, id); else if (choice() !== 'refuse') queue.push([name, params, id]);
+  }
+  function cookie(n) { var m = document.cookie.match(new RegExp('(?:^|; )' + n + '=([^;]*)')); return m ? decodeURIComponent(m[1]) : ''; }
+  /* _fbc : construit depuis fbclid si Meta ne l'a pas encore posé (uniquement avec l'accord) */
+  function fbc() {
+    var v = cookie('_fbc'); if (v) return v;
+    var id = PARAMS.fbclid || store.get('forma_fbclid', true) || '';
+    return id ? 'fb.1.' + (Number(store.get('forma_fbclid_t', true)) || Date.now()) + '.' + id : '';
+  }
+  if (PARAMS.fbclid) { store.set('forma_fbclid', PARAMS.fbclid, true); if (!store.get('forma_fbclid_t', true)) store.set('forma_fbclid_t', String(Date.now()), true); }
 
   /* Lead : marqué « en attente » à l'inscription, envoyé dès que le Pixel est autorisé et chargé, une seule fois. */
   function flushLead() {
     if (!pixelOn || store.get('forma_lead_pending', true) !== '1') return;
     var id = store.get('forma_lead_id', true) || ('lead-' + Date.now());
-    window.fbq('track', 'Lead', { content_name: 'Live 29 novembre' }, { eventID: id });
+    window.fbq('track', 'Lead', { content_name: 'Live 29 novembre', content_category: 'inscription' }, { eventID: id });
     store.del('forma_lead_pending', true);
     store.set('forma_lead_done', '1', true);
   }
@@ -86,8 +106,19 @@
     lead: function () {
       if (store.get('forma_lead_done', true) === '1') return; // jamais deux Lead pour la même visite
       store.set('forma_lead_pending', '1', true);
-      if (!store.get('forma_lead_id', true)) store.set('forma_lead_id', 'lead-' + Date.now() + '-' + Math.random().toString(36).slice(2, 8), true);
+      window.FORMA.leadId();
       flushLead();
+    },
+    /* Identifiant unique de l'inscription, partagé entre le Pixel et l'API Conversions (déduplication) */
+    leadId: function () {
+      var id = store.get('forma_lead_id', true);
+      if (!id) { id = 'lead-' + Date.now() + '-' + Math.random().toString(36).slice(2, 8); store.set('forma_lead_id', id, true); }
+      return id;
+    },
+    track: track,
+    /* Un événement au plus une fois par visite (ex. FormStart) */
+    once: function (name, params) {
+      var k = 'forma_ev_' + name; if (store.get(k, true) === '1') return; store.set(k, '1', true); track(name, params);
     },
     utm: function () {
       var q = new URLSearchParams(location.search), o = {};
@@ -100,7 +131,9 @@
     },
     /* Envoi au script serveur. Renvoie une promesse { ok: true/false }. */
     send: function (type, data, opts) {
-      var body = JSON.stringify(Object.assign({ type: type, page: location.pathname }, data || {}));
+      var ok = choice() === 'accept';
+      var body = JSON.stringify(Object.assign({ type: type, page: location.pathname, url: location.origin + location.pathname,
+        ck: ok ? 1 : 0, fbp: ok ? cookie('_fbp') : '', fbc: ok ? fbc() : '' }, data || {}));
       if (!C.ENDPOINT) return Promise.resolve({ ok: false, error: 'endpoint' });
       return fetch(C.ENDPOINT, {
         method: 'POST', headers: { 'Content-Type': 'application/json' }, body: body,
