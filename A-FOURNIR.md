@@ -15,4 +15,4 @@ Tant qu'un fichier manque, la page affiche un emplacement en pointillés.
 ## À me donner en texte
 
 - **Un vrai chantier chiffré** : FAIT (façade 1 390 € en 1 journée, virement anonymisé en images/virement-chantier.jpg, le chantier de l'avis de Stéphane B.).
-- **Le lien d'invitation du groupe WhatsApp** du live : à coller dans `index.html`, ligne `const WHATSAPP_URL=''`.
+- **Le lien d'invitation du groupe WhatsApp** du live, **l'identifiant du Pixel Meta** et, après le live, **le lien de prise de RDV** : à coller dans `assets/config.js` (un seul fichier pour tous les réglages).

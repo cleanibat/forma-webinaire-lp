@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#08172c">
+  <title>Inscriptions closes | CleanScale</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..900&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/forma.css?v=5">
+</head>
+<body data-forma-variant="marine">
+  <header>
+    <div class="container nav">
+      <a href="index.html" class="brand" aria-label="CleanScale, Le Live Nettoyage Extérieur"><span class="cs-logo">clean scale<i aria-hidden="true">.</i></span></a>
+    </div>
+  </header>
+  <main class="simple-main">
+    <div class="container">
+      <div class="simple-card signup" style="box-shadow:0 18px 60px rgba(13,35,65,.10)">
+        <div id="form-section">
+          <div class="closed-head">
+            <h1>Les inscriptions au live du 29 novembre sont closes.</h1>
+            <p>Le live a commencé, ou il est terminé. Il n'y a pas de replay.<br>Laisse ton e-mail&nbsp;: tu seras prévenu en premier de la date du prochain live.</p>
+          </div>
+          <form id="wait-form" novalidate>
+            <div class="hp" aria-hidden="true"><label>Site web<input type="text" name="website" id="website" tabindex="-1" autocomplete="off"></label></div>
+            <div class="form-pair">
+              <div class="form-row"><label for="firstName">Ton prénom</label><input id="firstName" name="firstName" type="text" placeholder="Ex. Thomas" autocomplete="given-name" maxlength="80" required></div>
+              <div class="form-row"><label for="email">Ton e-mail</label><input id="email" name="email" type="email" placeholder="ton@email.com" autocomplete="email" maxlength="180" required></div>
+            </div>
+            <div class="form-row"><label for="phone">Ton téléphone <span style="font-weight:500;color:#63748a">(facultatif)</span></label><input id="phone" name="phone" type="tel" placeholder="06 12 34 56 78" autocomplete="tel" inputmode="tel" maxlength="20" aria-describedby="phone-help"></div>
+            <p class="field-help pair-help" id="phone-help">Pour un rappel par SMS ou WhatsApp.</p>
+            <div class="consents">
+              <label class="check"><input type="checkbox" name="offres_ok" id="offres_ok" value="oui"><span>J'accepte de recevoir les offres de CleanScale par e-mail, SMS et WhatsApp. Facultatif. Je peux retirer mon accord à tout moment.</span></label>
+            </div>
+            <p id="form-error" role="alert" style="display:none;color:#a23c35;font-size:13px;font-weight:700;margin:-4px 0 12px"></p>
+            <button class="btn-main form-submit" type="submit">Prévenez-moi du prochain live <span aria-hidden="true">→</span></button>
+            <p class="small-note">Tes coordonnées servent à te prévenir de la date du prochain live. Tu peux arrêter à tout moment&nbsp;: lien en bas de chaque e-mail, ou STOP par SMS. Détails dans notre <a href="confidentialite.html">politique de confidentialité</a>.</p>
+          </form>
+        </div>
+        <div id="wait-ok" class="success" hidden role="status">
+          <h2 style="font-size:24px;margin:0 0 10px;color:#11274a">C'est noté<span id="ok-name"></span>.</h2>
+          <p>Tu recevras la date du prochain live avant tout le monde.<br><b>Aymeric &amp; Marius</b></p>
+        </div>
+        <!-- Bloc « Tu étais là dimanche ? » + lien de candidature : à ajouter SEULEMENT après la présentation de l'offre en direct (texte dans funnel/pages.md, section 6). -->
+      </div>
+    </div>
+  </main>
+  <footer><div class="container"><div class="footer-note">© 2026 CleanScale · Le Live Nettoyage Extérieur.<div class="footer-links"><a href="mentions-legales.html">Mentions légales</a><a href="confidentialite.html">Confidentialité</a><button type="button" data-ck-open>Gérer les cookies</button></div></div></div></footer>
+  <script src="assets/config.js?v=2"></script>
+  <script src="assets/commun.js?v=2"></script>
+  <script>
+  (()=>{
+    const F=window.FORMA,$=id=>document.getElementById(id),form=$('wait-form'),error=$('form-error'),btn=form.querySelector('.form-submit'),btnHtml=btn.innerHTML;
+    const done=n=>{$('ok-name').textContent=n?', '+n:'';$('form-section').hidden=true;$('wait-ok').hidden=false;};
+    const fail=(m,id)=>{error.textContent=m;error.style.display='block';if(id){$(id).setAttribute('aria-invalid','true');$(id).focus();}};
+    form.addEventListener('submit',e=>{
+      e.preventDefault();error.style.display='none';['firstName','email','phone'].forEach(id=>$(id).removeAttribute('aria-invalid'));
+      if($('website').value) return done('');
+      const firstName=$('firstName').value.trim(),email=$('email').value.trim().toLowerCase();
+      let phone=$('phone').value.replace(/\(0\)/,'').replace(/[^\d+]/g,'');
+      if(phone.startsWith('00')) phone='+'+phone.slice(2);
+      if(/^0[1-9]\d{8}$/.test(phone)) phone='+33'+phone.slice(1);
+      if(firstName.length<2) return fail('Indique ton prénom.','firstName');
+      if(!/^\S+@\S+\.\S+$/.test(email)) return fail('Indique une adresse e-mail valide.','email');
+      if(phone&&!/^\+[1-9]\d{8,14}$/.test(phone)) return fail('Indique un numéro de téléphone valide, ou laisse le champ vide.','phone');
+      btn.disabled=true;btn.textContent='Envoi…';
+      F.send('attente',Object.assign({firstName,email,phone,offres_ok:$('offres_ok').checked?'oui':'non',consent_version:(F.config.CONSENT_VERSION||''),consent_at:new Date().toISOString(),website:''},F.utm())).then(r=>{
+        if(!r||!r.ok){btn.disabled=false;btn.innerHTML=btnHtml;return fail("L'envoi n'est pas passé. Réessaie dans un instant.");}
+        done(firstName);
+      });
+    });
+  })();
+  </script>
+</body>
+</html>

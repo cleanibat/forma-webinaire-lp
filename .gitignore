@@ -1,0 +1,15 @@
+# Secrets et données des inscrits : jamais dans Git
+api/config.php
+api/data/*.jsonl
+# Pages de candidature : à publier seulement après la présentation de l'offre en direct (dimanche 29/11)
+candidature.html
+candidature-merci.html
+.DS_Store
+
+# Contenu interne (offre, prix, slides) : ne pas publier sur le dépôt public
+funnel/
+
+# Notes internes (concurrents, ids Make, serveur de test) : jamais publiques
+BENCHMARK-30-INFOPRENEURS.md
+LANCEMENT.md
+tools/
