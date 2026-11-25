@@ -204,6 +204,23 @@ if (isset($events[$type]) && (int)($in['ck'] ?? 0) === 1 && !empty($cfg['META_PI
   if ($mc < 200 || $mc >= 300) @file_put_contents($dir . '/meta-erreurs.log', date('c') . " $type $mc " . substr((string)$mr, 0, 300) . "\n", FILE_APPEND | LOCK_EX);
 }
 
+/* 4. Notification Telegram à chaque nouvel inscrit (prénom, numéro, heure ; ni e-mail ni téléphone) */
+if (($type === 'inscription' || $type === 'inscription_wj') && !empty($cfg['TELEGRAM_TOKEN']) && !empty($cfg['TELEGRAM_CHAT'])) {
+  $vus = [];
+  foreach (['inscription', 'inscription_wj'] as $f) {
+    foreach (@file($dir . '/' . $f . '.jsonl') ?: [] as $l) {
+      $o = json_decode($l, true);
+      $e = is_array($o) ? (string)($o['email'] ?? '') : '';
+      if ($e !== '' && !preg_match('/@(cleanibat|cleanscale)\.fr$|test/i', $e)) $vus[$e] = true; // sans nos adresses de test
+    }
+  }
+  $txt = '🎉 Nouvel inscrit n° ' . count($vus) . ' : ' . ($data['prenom'] !== '' ? $data['prenom'] : 'sans prénom')
+    . ' (' . (new DateTime('now', new DateTimeZone('Europe/Paris')))->format('H\hi') . ')';
+  $ch = curl_init('https://api.telegram.org/bot' . $cfg['TELEGRAM_TOKEN'] . '/sendMessage');
+  curl_setopt_array($ch, [CURLOPT_POST => true, CURLOPT_POSTFIELDS => ['chat_id' => $cfg['TELEGRAM_CHAT'], 'text' => $txt], CURLOPT_RETURNTRANSFER => true, CURLOPT_TIMEOUT => 4]);
+  curl_exec($ch); curl_close($ch);
+}
+
 /* La personne passe à la suite si l'inscription est gardée quelque part */
 if ($sent || $saved) out(true);
 out(false, ['error' => 'stockage'], 502);
