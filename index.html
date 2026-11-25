@@ -139,8 +139,8 @@
     const C=window.FORMA_CONFIG||{},F=window.FORMA;
     const $=id=>document.getElementById(id);
     const form=$('signup-form'),error=$('form-error'),section=$('form-section');
-    // Le 29/11 à 20 h, la landing laisse la place à la page « Inscriptions closes »
-    const LIVE=C.LIVE_UTC||Date.UTC(2026,10,29,19,0,0), liveOver=Date.now()>=LIVE+45*60*1000; // inscriptions ouvertes jusqu'à 20 h 45 (retardataires)
+    // Le 29/11, la landing laisse la place à « Inscriptions closes » 45 min après le début (entre-temps : « En direct maintenant »)
+    const LIVE=C.LIVE_UTC||Date.UTC(2026,10,29,19,0,0), liveOver=Date.now()>=LIVE+45*60*1000; // back-end seulement : formulaire ouvert 45 min après le début (jamais affiché, l heure du live reste 20 h)
     if(liveOver){location.replace('inscriptions-closes.html'+location.search);section.style.display='none';$('live-over').hidden=false;}
     // Mode B : formulaire intégré WebinarJam à la place du nôtre
     if(C.MODE==='B'){form.hidden=true;$('wj-embed').hidden=false;}
