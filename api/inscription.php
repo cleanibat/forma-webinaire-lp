@@ -81,6 +81,11 @@ switch ($type) {
       'prenom' => $clean($in['firstName'] ?? '', 80), 'telephone' => $phone, 'lien_live' => $lien,
       'offres_ok' => 'webinarjam', 'appel_ok' => '', 'consent_version' => 'formulaire-webinarjam', 'consent_at' => $data['date'],
       'ip' => $_SERVER['REMOTE_ADDR'] ?? '',
+      // Pour relier plus tard un appel ou un achat à la pub (API Conversions) : identifiants Meta, seulement avec l'accord cookies
+      'cookies_ok' => (int)($in['ck'] ?? 0) === 1 ? 'oui' : 'non',
+      'fbp' => (int)($in['ck'] ?? 0) === 1 ? $clean($in['fbp'] ?? '', 200) : '',
+      'fbc' => (int)($in['ck'] ?? 0) === 1 ? $clean($in['fbc'] ?? '', 300) : '',
+      'user_agent' => $clean($_SERVER['HTTP_USER_AGENT'] ?? '', 300),
     ];
     foreach (['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'] as $k) $data[$k] = $clean($in[$k] ?? '', 120);
     break;
