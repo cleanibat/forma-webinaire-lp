@@ -28,7 +28,7 @@ $in = json_decode($raw ?: '', true);
 if (!is_array($in)) out(false, ['error' => 'json'], 400);
 
 $type = (string)($in['type'] ?? '');
-$allowed = ['inscription', 'quiz', 'whatsapp', 'attente', 'candidature'];
+$allowed = ['inscription', 'inscription_wj', 'quiz', 'whatsapp', 'attente', 'candidature'];
 if (!in_array($type, $allowed, true)) out(false, ['error' => 'type'], 400);
 
 /* Piège à robots : on répond « ok » sans rien garder */
@@ -72,6 +72,18 @@ switch ($type) {
     ];
     foreach (['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'] as $k) $data[$k] = $clean($in[$k] ?? '', 120);
     break;
+  case 'inscription_wj':
+    /* Inscrit via le formulaire WebinarJam : la page merci renvoie ce que WebinarJam lui transmet (dont le lien personnel du live) */
+    $lien = $clean($in['lien_live'] ?? '', 300);
+    if ($lien !== '' && strpos($lien, 'https://event.webinarjam.com/') !== 0) $lien = '';
+    if (!preg_match('/^\+[1-9]\d{8,14}$/', $phone)) $phone = '';
+    $data += [
+      'prenom' => $clean($in['firstName'] ?? '', 80), 'telephone' => $phone, 'lien_live' => $lien,
+      'offres_ok' => 'webinarjam', 'appel_ok' => '', 'consent_version' => 'formulaire-webinarjam', 'consent_at' => $data['date'],
+      'ip' => $_SERVER['REMOTE_ADDR'] ?? '',
+    ];
+    foreach (['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'] as $k) $data[$k] = $clean($in[$k] ?? '', 120);
+    break;
   case 'quiz':
     $q = $clean($in['question'] ?? '', 20);
     $answers = ['presence' => ['oui', 'organiser'], 'profil' => ['debutant', 'artisan', 'nettoyage'], 'blocage' => ['clients', 'prix', 'materiel'], 'horizon' => ['janvier', '6mois', 'renseigne'], 'budget' => ['dedie', 'petit', 'rien']];
@@ -105,7 +117,7 @@ if (!empty($cfg['MAKE_WEBHOOK'])) {
   $ch = curl_init($cfg['MAKE_WEBHOOK']);
   curl_setopt_array($ch, [
     CURLOPT_POST => true,
-    CURLOPT_POSTFIELDS => json_encode($data, JSON_UNESCAPED_UNICODE),
+    CURLOPT_POSTFIELDS => json_encode($type === 'inscription_wj' ? ['type' => 'inscription'] + $data : $data, JSON_UNESCAPED_UNICODE),
     CURLOPT_HTTPHEADER => ['Content-Type: application/json'],
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_TIMEOUT => 12,
@@ -116,6 +128,22 @@ if (!empty($cfg['MAKE_WEBHOOK'])) {
   $sent = $resp !== false && $code >= 200 && $code < 300;
   if (!$sent && !empty($cfg['ALERT_EMAIL']) && in_array($type, ['inscription', 'candidature'], true)) {
     @mail($cfg['ALERT_EMAIL'], 'FORMA : envoi à Make en échec (' . $type . ')', "Make a répondu $code. La ligne est gardée dans api/data/$type.jsonl.\nE-mail : $email");
+  }
+}
+
+/* 2 bis. Brevo (e-mails avant le live) : contact créé ou mis à jour dans la liste du live, avec son lien personnel WebinarJam.
+   Réglages dans api/config.php : BREVO_API_KEY, BREVO_LIST_ID. */
+if (in_array($type, ['inscription', 'inscription_wj'], true) && !empty($cfg['BREVO_API_KEY']) && !empty($cfg['BREVO_LIST_ID'])) {
+  $attrs = array_filter(['PRENOM' => $data['prenom'] ?? '', 'LIEN_LIVE' => $data['lien_live'] ?? '', 'TELEPHONE' => $data['telephone'] ?? '',
+    'UTM_CONTENT' => $data['utm_content'] ?? '']);
+  $ch = curl_init('https://api.brevo.com/v3/contacts');
+  curl_setopt_array($ch, [CURLOPT_POST => true, CURLOPT_RETURNTRANSFER => true, CURLOPT_TIMEOUT => 8,
+    CURLOPT_HTTPHEADER => ['Content-Type: application/json', 'Accept: application/json', 'api-key: ' . $cfg['BREVO_API_KEY']],
+    CURLOPT_POSTFIELDS => json_encode(['email' => $email, 'attributes' => (object)$attrs, 'listIds' => [(int)$cfg['BREVO_LIST_ID']], 'updateEnabled' => true], JSON_UNESCAPED_UNICODE)]);
+  $br = curl_exec($ch); $bc = (int)curl_getinfo($ch, CURLINFO_RESPONSE_CODE); curl_close($ch);
+  if ($bc < 200 || $bc >= 300) {
+    @file_put_contents($dir . '/brevo-erreurs.log', date('c') . " $email $bc " . substr((string)$br, 0, 300) . "\n", FILE_APPEND | LOCK_EX);
+    if (!empty($cfg['ALERT_EMAIL'])) @mail($cfg['ALERT_EMAIL'], 'FORMA : ajout Brevo en échec', "Brevo a répondu $bc pour $email. Détail dans api/data/brevo-erreurs.log.");
   }
 }
 
