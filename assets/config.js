@@ -3,7 +3,7 @@
 window.FORMA_CONFIG = {
   // Circuit d'inscription. 'A' = notre formulaire → api/inscription.php → Make (→ API WebinarJam).
   //                        'B' = formulaire intégré WebinarJam (coller son code dans le bloc #wj-embed de index.html).
-  MODE: 'A',
+  MODE: 'B',
   ENDPOINT: 'api/inscription.php',          // script serveur (même domaine que la page)
   PIXEL_ID: '1928513481863228',                             // identifiant du Pixel Meta (chiffres uniquement). Vide = aucun Pixel.
   WHATSAPP_URL: 'https://chat.whatsapp.com/CKqmeaBs4MM5EXpwpUhDx0',
