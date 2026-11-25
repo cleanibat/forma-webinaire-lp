@@ -139,8 +139,10 @@ if (!empty($cfg['MAKE_WEBHOOK'])) {
 
 /* 2 bis. Brevo (e-mails avant le live) : contact créé ou mis à jour dans la liste du live, avec son lien personnel WebinarJam.
    Réglages dans api/config.php : BREVO_API_KEY, BREVO_LIST_ID. */
-if (in_array($type, ['inscription', 'inscription_wj'], true) && !empty($cfg['BREVO_API_KEY']) && !empty($cfg['BREVO_LIST_ID'])) {
-  $attrs = array_filter(['PRENOM' => $data['prenom'] ?? '', 'LIEN_LIVE' => $data['lien_live'] ?? '', 'TELEPHONE' => $data['telephone'] ?? '',
+if (in_array($type, ['inscription', 'inscription_wj', 'quiz'], true) && !empty($cfg['BREVO_API_KEY']) && !empty($cfg['BREVO_LIST_ID'])) {
+  $attrs = $type === 'quiz'
+    ? [strtoupper($data['question']) => $data['reponse']]   // PROFIL, BLOCAGE, HORIZON, BUDGET : pour trier et personnaliser les e-mails
+    : array_filter(['PRENOM' => $data['prenom'] ?? '', 'LIEN_LIVE' => $data['lien_live'] ?? '', 'TELEPHONE' => $data['telephone'] ?? '',
     'UTM_CONTENT' => $data['utm_content'] ?? '']);
   $ch = curl_init('https://api.brevo.com/v3/contacts');
   curl_setopt_array($ch, [CURLOPT_POST => true, CURLOPT_RETURNTRANSFER => true, CURLOPT_TIMEOUT => 8,
