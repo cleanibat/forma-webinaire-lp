@@ -37,9 +37,11 @@ $pick = static function (array $a, array $names) {
 };
 $email = strtolower(trim($pick($in, ['email', 'lead_email', 'wj_lead_email', 'attendee_email'])));
 $prenom = trim($pick($in, ['first_name', 'firstname', 'name', 'lead_first_name', 'wj_lead_first_name']));
-$lien = trim($pick($in, ['live_room_url', 'unique_link_live_room', 'live_room_link', 'wj_lead_unique_link_live_room', 'live_url']));
+$lien = trim($pick($in, ['live_room', 'live_room_url', 'unique_link_live_room', 'live_room_link', 'wj_lead_unique_link_live_room', 'live_url']));
 $duree = trim($pick($in, ['time_live', 'time_in_live_room', 'live_time', 'duration', 'time_in_room']));
 if ($lien !== '' && strpos($lien, 'https://event.webinarjam.com/') !== 0) $lien = '';
+$tel = preg_replace('/[^\d+]/', '', $pick($in, ['phone_country_code']) . $pick($in, ['phone_number', 'phone'])) ?? '';
+if (!preg_match('/^\+[1-9]\d{8,14}$/', $tel)) $tel = '';
 
 /* 1. Copie brute (sert aussi à découvrir les noms exacts des champs au premier envoi) */
 $dir = __DIR__ . '/data';
@@ -59,7 +61,7 @@ if (!empty($cfg['MAKE_WEBHOOK'])) {
 /* 2. Brevo */
 if (filter_var($email, FILTER_VALIDATE_EMAIL) && !empty($cfg['BREVO_API_KEY']) && !empty($cfg['BREVO_LIST_ID'])) {
   if ($evt === 'inscription') {
-    $attrs = array_filter(['PRENOM' => mb_substr($prenom, 0, 80), 'LIEN_LIVE' => $lien]);
+    $attrs = array_filter(['PRENOM' => mb_substr($prenom, 0, 80), 'LIEN_LIVE' => $lien, 'TELEPHONE' => $tel]);
   } else {
     $attrs = ['PRESENT_LIVE' => $evt === 'present' ? 'oui' : 'non'];
     if ($duree !== '') $attrs['DUREE_LIVE'] = mb_substr($duree, 0, 20);
