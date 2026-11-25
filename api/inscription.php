@@ -109,9 +109,24 @@ switch ($type) {
     break;
 }
 
+$dir = __DIR__ . '/data';
+
+/* 0. Anti-doublon : une inscription déjà reçue pour cet e-mail (page merci rechargée ou ouverte deux fois)
+   → on répond « ok » sans nouvelle ligne au CRM, sans nouveau contact Brevo ni second Lead Meta. */
+if ($type === 'inscription' || $type === 'inscription_wj') {
+  $needle = '"email":' . json_encode($email, JSON_UNESCAPED_UNICODE) . ',';
+  foreach (['inscription', 'inscription_wj'] as $f) {
+    $h = @fopen($dir . '/' . $f . '.jsonl', 'r');
+    if (!$h) continue;
+    while (($line = fgets($h)) !== false) {
+      if (strpos($line, $needle) !== false) { fclose($h); out(true, ['deja' => true]); }
+    }
+    fclose($h);
+  }
+}
+
 /* 1. Copie de secours (fichier protégé par api/data/.htaccess) */
 $saved = false;
-$dir = __DIR__ . '/data';
 if (is_dir($dir) || @mkdir($dir, 0750, true)) {
   $row = $data; unset($row['cle']);
   $saved = @file_put_contents($dir . '/' . $type . '.jsonl', json_encode($row, JSON_UNESCAPED_UNICODE) . "\n", FILE_APPEND | LOCK_EX) !== false;
