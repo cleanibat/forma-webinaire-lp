@@ -47,6 +47,15 @@ if (is_dir($dir) || @mkdir($dir, 0750, true)) {
   @file_put_contents($dir . '/wj-' . $evt . '.jsonl', json_encode(['recu' => date('c'), 'e' => $evt, 'donnees' => $in], JSON_UNESCAPED_UNICODE) . "\n", FILE_APPEND | LOCK_EX);
 }
 
+/* 1 bis. Copie vers Make (visible dans l'historique du scénario ; la route « presence » écrit dans l'onglet Import_presence) */
+if (!empty($cfg['MAKE_WEBHOOK'])) {
+  $ch = curl_init($cfg['MAKE_WEBHOOK']);
+  curl_setopt_array($ch, [CURLOPT_POST => true, CURLOPT_RETURNTRANSFER => true, CURLOPT_TIMEOUT => 8, CURLOPT_HTTPHEADER => ['Content-Type: application/json'],
+    CURLOPT_POSTFIELDS => json_encode(['type' => 'wj_' . $evt, 'cle' => $cfg['MAKE_KEY'] ?? '', 'date' => (new DateTime('now', new DateTimeZone('Europe/Paris')))->format('d/m/Y H:i:s'),
+      'email' => $email, 'prenom' => $prenom, 'lien_live' => $lien, 'duree' => $duree, 'brut' => $in], JSON_UNESCAPED_UNICODE)]);
+  curl_exec($ch); curl_close($ch);
+}
+
 /* 2. Brevo */
 if (filter_var($email, FILTER_VALIDATE_EMAIL) && !empty($cfg['BREVO_API_KEY']) && !empty($cfg['BREVO_LIST_ID'])) {
   if ($evt === 'inscription') {
