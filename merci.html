@@ -56,7 +56,7 @@
     const email=((P.wj_lead_email||P.email||F.store.get('forma_email',true)||'')+'').trim().toLowerCase();
     // Inscription WebinarJam : on transmet l'inscrit (avec son lien personnel) au serveur → CRM + Brevo. Une seule fois par inscription.
     if(P.wj_lead_email&&F.store.get('forma_wj_sent',true)!==email){
-      F.send('inscription_wj',Object.assign({email,firstName:prenom,phone:(P.wj_lead_phone_country_code||'')+(P.wj_lead_phone_number||''),lien_live:P.wj_lead_unique_link_live_room||''},F.utm()),{keepalive:true})
+      F.send('inscription_wj',Object.assign({email,firstName:prenom,phone:(P.wj_lead_phone_country_code||'')+(P.wj_lead_phone_number||''),lien_live:P.wj_lead_unique_link_live_room||'',event_id:(F.leadId?F.leadId():'')},F.utm()),{keepalive:true})
        .then(r=>{if(r&&r.ok)F.store.set('forma_wj_sent',email,true);});
     }
     if(prenom){$('success-name').textContent=', '+prenom;F.store.set('forma_prenom',prenom,true);}

@@ -86,6 +86,7 @@ switch ($type) {
       'fbp' => (int)($in['ck'] ?? 0) === 1 ? $clean($in['fbp'] ?? '', 200) : '',
       'fbc' => (int)($in['ck'] ?? 0) === 1 ? $clean($in['fbc'] ?? '', 300) : '',
       'user_agent' => $clean($_SERVER['HTTP_USER_AGENT'] ?? '', 300),
+      'source' => 'webinarjam',
     ];
     foreach (['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'] as $k) $data[$k] = $clean($in[$k] ?? '', 120);
     break;
@@ -154,7 +155,7 @@ if (in_array($type, ['inscription', 'inscription_wj'], true) && !empty($cfg['BRE
 
 /* 3. API Conversions Meta (côté serveur), seulement avec l'accord cookies de la personne.
    Même event_id que le Pixel du navigateur : Meta ne compte l'inscription qu'une fois. */
-$events = ['inscription' => 'Lead', 'candidature' => 'SubmitApplication'];
+$events = ['inscription' => 'Lead', 'inscription_wj' => 'Lead', 'candidature' => 'SubmitApplication'];
 if (isset($events[$type]) && (int)($in['ck'] ?? 0) === 1 && !empty($cfg['META_PIXEL_ID']) && !empty($cfg['META_CAPI_TOKEN'])) {
   $h = static function (string $v): string { return $v === '' ? '' : hash('sha256', $v); };
   $ud = array_filter([
