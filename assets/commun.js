@@ -22,13 +22,8 @@
     del: function (k, s) { try { (s ? sessionStorage : localStorage).removeItem(k); } catch (e) {} }
   };
 
-  function choice() {
-    try {
-      var c = JSON.parse(store.get(CK_KEY) || 'null');
-      if (c && (c.v === 'accept' || c.v === 'refuse') && Date.now() - c.t < SIX_MONTHS) return c.v;
-    } catch (e) {}
-    return null;
-  }
+  /* Pas de bandeau (décision d'Aymeric, 26/11/2026) : le Pixel se charge pour tout le monde dès l'arrivée */
+  function choice() { return 'accept'; }
 
   var pixelOn = false;
   function loadPixel() {
@@ -91,14 +86,7 @@
     return d;
   }
 
-  function init() {
-    var banner = buildBanner();
-    var c = choice();
-    if (c === 'accept') loadPixel(); else if (!c) banner.hidden = false;
-    document.addEventListener('click', function (e) {
-      if (e.target.closest('[data-ck-open]')) { e.preventDefault(); banner.hidden = false; var b = banner.querySelector('button'); if (b) b.focus(); }
-    });
-  }
+  function init() { loadPixel(); }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
 
   window.FORMA = {
