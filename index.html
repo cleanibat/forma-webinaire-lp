@@ -179,6 +179,14 @@
     // Suivi Meta : ouverture de la page d'inscription, puis premier champ touché
     if(!liveOver) F.track('ViewContent',{content_name:'Landing live',content_category:'inscription'});
     form.addEventListener('focusin',()=>F.once('FormStart',{content_name:'Landing live'}),{once:true});
+    // Mesure de l'entonnoir avec le formulaire WebinarJam (iframe) : clic sur un bouton → formulaire vu → premier champ touché.
+    // Une seule fois par visite chacun ; aucune donnée personnelle, rien ne change à l'écran.
+    document.addEventListener('click',e=>{const a=e.target.closest&&e.target.closest('a[href="#inscription"]');if(!a)return;
+      F.once('ClickCTA',{content_name:'Landing live',position:a.id==='exit-go'?'popup-sortie':a.closest('.mobile-cta')?'barre-mobile':a.classList.contains('nav-btn')?'menu':a.closest('.hero')?'haut':'page'});});
+    const wj=$('wj-embed');
+    if(wj&&'IntersectionObserver' in window){const wo=new IntersectionObserver(es=>{if(es.some(x=>x.isIntersecting)){F.once('FormView',{content_name:'Landing live'});wo.disconnect();}},{threshold:.5});wo.observe(wj);}
+    // Un toucher dans l'iframe fait perdre le focus à la page : si le focus est passé sur l'iframe du formulaire, c'est un début de saisie
+    addEventListener('blur',()=>setTimeout(()=>{const f=document.activeElement;if(wj&&f&&f.tagName==='IFRAME'&&wj.contains(f))F.once('FormStart',{content_name:'Landing live',form:'webinarjam'});},0));
     // Inscription : notre formulaire → api/inscription.php → Make (CRM + WebinarJam), puis page /merci
     const btn=form.querySelector('.form-submit'),btnHtml=btn.innerHTML;
     form.addEventListener('submit',e=>{
