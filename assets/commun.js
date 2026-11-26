@@ -74,10 +74,12 @@
     d.className = 'ck'; d.id = 'ck'; d.hidden = true;
     d.setAttribute('role', 'dialog'); d.setAttribute('aria-labelledby', 'ck-title'); d.setAttribute('aria-live', 'polite');
     d.innerHTML =
-      '<h2 id="ck-title">Cookies</h2>' +
-      '<p class="ck-text">Avec ton accord, nous utilisons le Pixel de Meta (Facebook, Instagram) pour savoir si tu es arrivé ici par l\'une de nos publicités et si tu t\'es inscrit. Ça nous aide à montrer nos pubs aux bonnes personnes. Si tu refuses, rien n\'est déposé et la page marche pareil.</p>' +
-      '<div class="ck-btns"><button type="button" data-ck="refuse">Refuser</button><button type="button" data-ck="accept">Accepter</button></div>' +
-      '<p class="ck-more">En savoir plus : <a href="confidentialite.html#cookies">politique de confidentialité, rubrique Cookies</a>.</p>';
+      /* Format « pop-in + Continuer sans accepter » (meilleurs taux conformes CNIL, benchmark Didomi) : le refus reste en 1 clic, bien visible */
+      '<button type="button" class="ck-skip" data-ck="refuse">Continuer sans accepter <span aria-hidden="true">→</span></button>' +
+      '<h2 id="ck-title">Ta vie privée est notre priorité</h2>' +
+      '<p class="ck-text">Avec ton accord, on utilise le Pixel de Meta (Facebook, Instagram) pour savoir quelles pubs t\'ont amené ici. Ça nous aide à montrer le live aux bonnes personnes.</p>' +
+      '<div class="ck-btns"><button type="button" data-ck="accept">Accepter</button></div>' +
+      '<p class="ck-more">En savoir plus&nbsp;: <a href="confidentialite.html#cookies">politique de confidentialité</a>.</p>';
     document.body.appendChild(d);
     d.addEventListener('click', function (e) {
       var b = e.target.closest('button[data-ck]'); if (!b) return;
