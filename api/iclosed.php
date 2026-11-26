@@ -140,7 +140,9 @@ if ($evt === 'reserve' && $email !== '' && !empty($cfg['BREVO_API_KEY']) && $lis
 }
 
 /* 4. Telegram */
-if (!empty($cfg['TELEGRAM_TOKEN']) && !empty($cfg['TELEGRAM_CHAT']) && $evt !== 'autre') {
+/* iClosed ajoute tout seul un résultat « NO_SALE / ADMIN_CANCELLED » à chaque annulation : déjà signalé par l'alerte « RDV annulé » */
+$resultatAuto = $evt === 'resultat' && stripos($objection, 'CANCEL') !== false;
+if (!empty($cfg['TELEGRAM_TOKEN']) && !empty($cfg['TELEGRAM_CHAT']) && $evt !== 'autre' && !$resultatAuto) {
   $qui = ($prenom !== '' ? $prenom : 'Sans prénom') . ($nom !== '' ? ' ' . mb_substr($nom, 0, 1) . '.' : '');
   $avec = $closer !== '' ? ' avec ' . trim($closer) : '';
   if ($evt === 'reserve') $txt = "📅 Nouveau RDV : $qui, $quand$avec." . ($reponses !== '' ? "\n" . mb_substr($reponses, 0, 600) : '');
