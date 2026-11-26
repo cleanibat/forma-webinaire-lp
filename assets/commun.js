@@ -53,6 +53,25 @@
     var id = PARAMS.fbclid || store.get('forma_fbclid', true) || '';
     return id ? 'fb.1.' + (Number(store.get('forma_fbclid_t', true)) || Date.now()) + '.' + id : '';
   }
+  /* Code de la pub lu dans le fbclid (7 octets après « adid » + 0x01), relevé sur les inscrits du 26/11 qui avaient leurs UTM.
+     Clé = code, valeur = [nom de la pub, ensemble de pubs]. Une pub absente de la liste donne « meta-pub-inconnue ». */
+  var T = '120251008362280497', CH = '120251008362630497', TL = '120251008363240497';
+  var PUBS = {
+    ab37ab65438a21: ['CH-H14C2-sobre', CH], ab37ab653fb991: ['CH-H11C4-sobre', CH], ab37ab6530c571: ['CH-H8C2-sobre', CH],
+    ab37ab57961af1: ['T-B3', T], ab37ab57b69b41: ['T-C3', T], ab37ab57b93351: ['TL-formateurs-H3', TL]
+  };
+  function codePub(id) {
+    for (var j = 0; j < 4; j++) {
+      try {
+        var t = id.slice(j).replace(/-/g, '+').replace(/_/g, '/'); t = t.slice(0, t.length - t.length % 4);
+        var b = atob(t), i = b.indexOf('adid\x01'), h = '';
+        if (i < 0) continue;
+        for (var k = i + 5; k < i + 12; k++) h += ('0' + b.charCodeAt(k).toString(16)).slice(-2);
+        return h;
+      } catch (e) {}
+    }
+    return '';
+  }
   if (PARAMS.fbclid) { store.set('forma_fbclid', PARAMS.fbclid, true); if (!store.get('forma_fbclid_t', true)) store.set('forma_fbclid_t', String(Date.now()), true); }
 
   /* Lead : marqué « en attente » à l'inscription, envoyé dès que le Pixel est autorisé et chargé, une seule fois. */
@@ -123,6 +142,20 @@
         o[k] = v;
       });
       if (neuf) { var d = { t: Date.now() }; keys.forEach(function (k) { d[k] = o[k]; }); store.set('forma_utm', JSON.stringify(d)); }
+      /* Clic Meta sans UTM (lien ouvert depuis la vue du post : commentaires, notification, partage) :
+         Meta n'ajoute pas les UTM mais l'identifiant de clic (fbclid) contient un code de la pub.
+         On le relit pour retrouver la pub ; jamais mémorisé, seulement déduit à l'envoi. */
+      if (!o.utm_source && !o.utm_campaign && !o.utm_content) {
+        var clic = PARAMS.fbclid || store.get('forma_fbclid', true) || fbc().split('.')[3] || '';
+        if (clic) {
+          var pub = PUBS[codePub(clic)];
+          /* « paid-deduit » seulement si la pub est reconnue : un fbclid sans code de pub peut venir d'un post organique ou d'un partage */
+          o.utm_source = 'meta'; o.utm_medium = pub ? 'paid-deduit' : 'meta-deduit';
+          o.utm_campaign = pub ? 'cleanscale-live-29nov' : '';
+          o.utm_content = pub ? pub[0] : 'meta-pub-inconnue';
+          o.utm_term = pub ? pub[1] : '';
+        }
+      }
       return o;
     },
     /* Envoi au script serveur. Renvoie une promesse { ok: true/false }. */
