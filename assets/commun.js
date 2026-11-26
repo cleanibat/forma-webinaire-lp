@@ -120,13 +120,19 @@
     once: function (name, params) {
       var k = 'forma_ev_' + name; if (store.get(k, true) === '1') return; store.set(k, '1', true); track(name, params);
     },
+    /* UTM de la pub : gardés aussi dans localStorage (7 jours), car WebinarJam peut ouvrir /merci dans un autre onglet,
+       où la mémoire de session est vide. Ce ne sont pas des données personnelles (nom de pub). */
     utm: function () {
-      var q = new URLSearchParams(location.search), o = {};
-      ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].forEach(function (k) {
-        var v = q.get(k) || store.get('forma_' + k, true) || '';
+      var q = new URLSearchParams(location.search), o = {}, keys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+      var dur = null;
+      try { dur = JSON.parse(store.get('forma_utm') || 'null'); if (dur && Date.now() - dur.t > 7 * 864e5) dur = null; } catch (e) { dur = null; }
+      var neuf = keys.some(function (k) { return q.get(k); });
+      keys.forEach(function (k) {
+        var v = q.get(k) || (neuf ? '' : (store.get('forma_' + k, true) || (dur && dur[k]) || ''));
         if (q.get(k)) store.set('forma_' + k, v, true);
         o[k] = v;
       });
+      if (neuf) { var d = { t: Date.now() }; keys.forEach(function (k) { d[k] = o[k]; }); store.set('forma_utm', JSON.stringify(d)); }
       return o;
     },
     /* Envoi au script serveur. Renvoie une promesse { ok: true/false }. */
